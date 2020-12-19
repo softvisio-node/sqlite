@@ -17,8 +17,10 @@ npm i --unsafe --only=prod --ignore-scripts
 # linux, windows
 npx prebuild --strip --include-regex "better_sqlite3.node$" -r node
 
+npx prebuild --strip --include-regex "better_sqlite3.node$" -r node -t 15.0.0
+
 # electron
-npx prebuild --strip --include-regex "better_sqlite3.node$" -r electron -t 10.1.4
+npx prebuild --strip --include-regex "better_sqlite3.node$" -r electron -t 11.1.0
 ```
 
 ## CeonOS 8
