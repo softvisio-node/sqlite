@@ -14,9 +14,8 @@ npm pack better-sqlite3
 cd package
 npm i --ignore-scripts
 
-# linux, windows
+# windows
 npx prebuild --strip --include-regex "better_sqlite3.node$" -r node
-
 npx prebuild --strip --include-regex "better_sqlite3.node$" -r node -t 15.0.0
 
 # electron
@@ -24,6 +23,8 @@ npx prebuild --strip --include-regex "better_sqlite3.node$" -r electron -t 11.1.
 ```
 
 ## CeonOS 8
+
+For linux you need to build it under centos 8.
 
 ```
 docker run --rm -it -v$PWD:/var/local/dist softvisio/core
