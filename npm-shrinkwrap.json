@@ -1,11 +1,11 @@
 {
-    "name": "@softvisio/better-sqlite3",
+    "name": "@softvisio/sqlite",
     "version": "0.4.2",
     "lockfileVersion": 2,
     "requires": true,
     "packages": {
         "": {
-            "name": "@softvisio/better-sqlite3",
+            "name": "@softvisio/sqlite",
             "version": "0.4.2",
             "license": "ISC",
             "dependencies": {
