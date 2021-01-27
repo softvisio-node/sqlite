@@ -1,15 +1,15 @@
 {
-    "name": "@softvisio/better-sqlite3",
+    "name": "@softvisio/sqlite",
     "version": "0.4.2",
     "description": "better-sqlite3 re-packed",
-    "homepage": "https://bitbucket.org/softvisio/softvisio-better-sqlite3",
+    "homepage": "https://bitbucket.org/softvisio/softvisio-sqlite",
     "bugs": {
-        "url": "https://bitbucket.org/softvisio/softvisio-better-sqlite3/issues",
+        "url": "https://bitbucket.org/softvisio/softvisio-sqlite/issues",
         "email": "zdm@softvisio.net"
     },
     "repository": {
         "type": "git",
-        "url": "https://bitbucket.org/softvisio/softvisio-better-sqlite3.git"
+        "url": "https://bitbucket.org/softvisio/softvisio-sqlite.git"
     },
     "license": "ISC",
     "author": "<zdm@softvisio.net>",

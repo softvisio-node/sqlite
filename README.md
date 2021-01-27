@@ -3,7 +3,7 @@
 ## NPM
 
 ```
-npm i bitbucket:softvisio/softvisio-better-sqlite3#latest
+npm i @softvisio/sqlite
 ```
 
 # BUILD
