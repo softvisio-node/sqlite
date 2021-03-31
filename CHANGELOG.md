@@ -1,3 +1,9 @@
+## 1.0.2 (2021-03-31)
+
+### Raw commits log
+
+-   deps updated;
+
 ## 1.0.1 (2021-01-31)
 
 -   package-lock disabled
