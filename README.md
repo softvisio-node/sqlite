@@ -10,7 +10,7 @@ npm i @softvisio/sqlite
 
 ```
 npm pack better-sqlite3
-# tar xvf ...
+# tar xf ...
 cd package
 npm i --ignore-scripts
 
@@ -22,7 +22,7 @@ npx prebuild --strip --include-regex "better_sqlite3.node$" -r node
 # npx prebuild --strip --include-regex "better_sqlite3.node$" -r node -t 15.0.0
 
 # electron
-npx prebuild --strip --include-regex "better_sqlite3.node$" -r electron -t 11.1.0
+npx prebuild --strip --include-regex "better_sqlite3.node$" -r electron -t 12.0.4
 ```
 
 ## CeonOS 8
