@@ -1,3 +1,9 @@
+## 1.0.6 (2021-04-20)
+
+### Raw commits log
+
+-   node v16 support;
+
 ## 1.0.5 (2021-04-15)
 
 ### Raw commits log
