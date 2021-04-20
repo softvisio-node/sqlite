@@ -1,3 +1,9 @@
+## 1.0.7 (2021-04-20)
+
+### Raw commits log
+
+-   engines updated;
+
 ## 1.0.6 (2021-04-20)
 
 ### Raw commits log
