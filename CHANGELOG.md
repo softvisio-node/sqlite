@@ -1,72 +1,72 @@
 ## 1.3.2 (2021-06-01)
 
-### Raw commits log
+**Raw commits log**
 
 -   lint config removed;
 
 ## 1.3.1 (2021-05-19)
 
-### Raw commits log
+**Raw commits log**
 
 -   lint script removed;
 
 ## 1.3.0 (2021-05-14)
 
-### Raw commits log
+**Raw commits log**
 
 -   v7.4.0;
 
 ## 1.2.1 (2021-05-05)
 
-### Raw commits log
+**Raw commits log**
 
 -   v7.3.1;
 
 ## 1.2.0 (2021-05-05)
 
-### Raw commits log
+**Raw commits log**
 
 -   v7.3.0;
 
 ## 1.1.0 (2021-05-04)
 
-### Raw commits log
+**Raw commits log**
 
 -   v7.2.0;
 
 ## 1.0.7 (2021-04-20)
 
-### Raw commits log
+**Raw commits log**
 
 -   engines updated;
 
 ## 1.0.6 (2021-04-20)
 
-### Raw commits log
+**Raw commits log**
 
 -   node v16 support;
 
 ## 1.0.5 (2021-04-15)
 
-### Raw commits log
+**Raw commits log**
 
 -   v7.1.5;
 
 ## 1.0.4 (2021-04-12)
 
-### Raw commits log
+**Raw commits log**
 
 -   dev deps removed;
 
 ## 1.0.3 (2021-03-31)
 
-### Raw commits log
+**Raw commits log**
 
 -   readme updated;
 
 ## 1.0.2 (2021-03-31)
 
-### Raw commits log
+**Raw commits log**
 
 -   deps updated;
 
