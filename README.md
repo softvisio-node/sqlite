@@ -22,7 +22,7 @@ npx prebuild --strip --include-regex "better_sqlite3.node$" -r node
 # npx prebuild --strip --include-regex "better_sqlite3.node$" -r node -t 15.0.0
 
 # electron
-npx prebuild --strip --include-regex "better_sqlite3.node$" -r electron -t 12.0.6
+npx prebuild --strip --include-regex "better_sqlite3.node$" -r electron -t 13.1.0
 ```
 
 ## CeonOS 8
