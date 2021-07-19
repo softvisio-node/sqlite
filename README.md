@@ -12,6 +12,8 @@ npm i @softvisio/sqlite
 
 ## Build
 
+### Windows, Electron
+
 ```shell
 npm pack better-sqlite3
 # tar xf ...
@@ -29,7 +31,7 @@ npx prebuild --strip --include-regex "better_sqlite3.node$" -r node
 npx prebuild --strip --include-regex "better_sqlite3.node$" -r electron -t 13.1.6
 ```
 
-### CeonOS 8
+### Linux
 
 **!!! For linux you need to build it under centos 8. !!!**
 
