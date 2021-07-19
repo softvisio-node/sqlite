@@ -1,14 +1,14 @@
-# INSTALL
+# Intruduction
 
-## NPM
+## Install
 
-```
+```sh
 npm i @softvisio/sqlite
 ```
 
-# BUILD
+## Build
 
-```
+```sh
 npm pack better-sqlite3
 # tar xf ...
 cd package
@@ -25,11 +25,11 @@ npx prebuild --strip --include-regex "better_sqlite3.node$" -r node
 npx prebuild --strip --include-regex "better_sqlite3.node$" -r electron -t 13.1.0
 ```
 
-## CeonOS 8
+### CeonOS 8
 
-### !!! For linux you need to build it under centos 8. !!!
+**!!! For linux you need to build it under centos 8. !!!**
 
-```
+```sh
 docker run --rm -it -v$PWD:/var/local/mount softvisio/core
 
 curl -fsSL https://raw.githubusercontent.com/softvisio/scripts/main/env-build-node.sh | /bin/bash -s -- setup-build
