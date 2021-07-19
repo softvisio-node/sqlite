@@ -1,0 +1,18 @@
+logo: false
+
+types:
+
+externalTypes:
+  - https://softvisio.github.io/core/
+  - https://softvisio.github.io/result/
+
+aliases:
+  /api: https://raw.githubusercontent.com/softvisio/core/main/docs/api.md
+
+api:
+  location: lib/api
+  url: wss://domain.com/api/
+
+rpc:
+  location: lib/rpc
+  url: ws://domain:8080/
