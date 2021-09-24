@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.6.0 (2021-09-24)
+
+Features:
+
+-   feat: build with SQLITE_USE_URI=1
+
 ### 1.5.2 (2021-07-19)
 
 Fixed:
