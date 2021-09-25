@@ -23,6 +23,9 @@ npm i --ignore-scripts
 # patch
 sed -i -e '/SQLITE_USE_URI=0/ s/=0/=1/' deps/defines.gypi
 
+# patch `lib/database.js`
+# comment `Make sure the specified directory exists` code block
+
 # windows
 # current node version
 npx prebuild --strip --include-regex "better_sqlite3.node$" -r node
