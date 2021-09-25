@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.6.1 (2021-09-25)
+
+Fixes:
+
+-   fix: disable directory check
+
 ### 1.6.0 (2021-09-24)
 
 Features:
