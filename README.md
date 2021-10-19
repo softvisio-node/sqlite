@@ -31,7 +31,7 @@ npx prebuild --strip --include-regex "better_sqlite3.node$" -r node
 # npx prebuild --strip --include-regex "better_sqlite3.node$" -r node -t 15.0.0
 
 # electron
-npx prebuild --strip --include-regex "better_sqlite3.node$" -r electron -t 15.0.0
+npx prebuild --strip --include-regex "better_sqlite3.node$" -r electron -t 15.2.0
 ```
 
 ### Linux
