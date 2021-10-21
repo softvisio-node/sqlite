@@ -39,7 +39,7 @@ npx prebuild --strip --include-regex "better_sqlite3.node$" -r electron -t 15.2.
 **!!! For linux you need to build it under centos 8. !!!**
 
 ```shell
-docker run --rm -it -v$PWD:/var/local/mount softvisio/node
+docker run --rm -it -v$PWD:/var/local/mount zerocluster/node
 
 curl -fsSL https://raw.githubusercontent.com/softvisio/scripts/main/env-build-node.sh | /bin/bash -s -- setup-build
 curl -fsSL $(npm view better-sqlite3 dist.tarball) | tar -xz
