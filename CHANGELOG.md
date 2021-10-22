@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.7.0 (2021-10-22)
+
+Features:
+
+-   feat: node v17 binaries
+
 ### 1.6.1 (2021-09-25)
 
 Fixes:
