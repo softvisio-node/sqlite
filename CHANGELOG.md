@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.8.0 (2021-11-18)
+
+Features:
+
+-   feat: rebuild under ubuntu
+
 ### 1.7.0 (2021-10-22)
 
 Features:
