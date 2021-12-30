@@ -23,7 +23,7 @@ jobs:
           # - macos-latest
     name: Prebuild on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
-    needs: publish
+    # needs: publish
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
