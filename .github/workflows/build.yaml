@@ -1,4 +1,4 @@
-name: Build
+name: build
 
 on:
   workflow_dispatch:
@@ -29,6 +29,9 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 17
-      - run: npm install --ignore-scripts
-      - run: npx --no-install prebuild --strip --include-regex 'better_sqlite3.node$' -u ${{ secrets.GITHUB_TOKEN }} -r node
+      - run: |
+          tar --version
+          sed --version
+      # - run: npm install --ignore-scripts
+      # - run: npx --no-install prebuild --strip --include-regex 'better_sqlite3.node$' -u ${{ secrets.GITHUB_TOKEN }} -r node
       # - run: npx --no-install prebuild --strip --include-regex "better_sqlite3.node$" -u ${{ secrets.GITHUB_TOKEN }} -r electron -t 15.0.0
