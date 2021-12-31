@@ -22,7 +22,6 @@ jobs:
           # - macos-latest
     name: prebuild on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
-    shell: bash
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -47,3 +46,4 @@ jobs:
           # git checkout "${GITHUB_REF:11}"
           # git commit -am "Automated report"
           # git push
+      - shell: bash
