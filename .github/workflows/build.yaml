@@ -27,9 +27,16 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 17
+      - shell: bash
       - run: |
           curl -fsSL $(npm view better-sqlite3 dist.tarball) | tar -xz
           cd package
           npm i --ignore-scripts
-          npx --no-install prebuild --strip --include-regex 'better_sqlite3.node$' -u ${{ secrets.GITHUB_TOKEN }} -r node
+          npx --no-install prebuild --strip --include-regex 'better_sqlite3.node$' -r node
           # npx --no-install prebuild --strip --include-regex "better_sqlite3.node$" -u ${{ secrets.GITHUB_TOKEN }} -r electron -t 15.0.0
+          #
+          # git config --global user.email 'your-username@users.noreply.github.com'
+          # git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+          # git checkout "${GITHUB_REF:11}"
+          # git commit -am "Automated report"
+          # git push
