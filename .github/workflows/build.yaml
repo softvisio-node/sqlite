@@ -12,12 +12,11 @@ on:
   #   types:
   #     - released
 
-defaults:
-  run:
-    shell: bash
-
 jobs:
   build:
+    defaults:
+      run:
+        shell: bash
     strategy:
       matrix:
         os:
