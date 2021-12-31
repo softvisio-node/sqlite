@@ -12,6 +12,10 @@ on:
   #   types:
   #     - released
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   build:
     strategy:
@@ -46,4 +50,3 @@ jobs:
           # git checkout "${GITHUB_REF:11}"
           # git commit -am "Automated report"
           # git push
-      - shell: bash
