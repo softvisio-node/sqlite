@@ -1,3 +1,11 @@
+# curl -X POST \
+#     -H "Content-Length: <file size in bytes>" \
+#     -H "Content-Type: $(file -b --mime-type $FILE)" \ #from @galeksandrp's answer
+#     -T "path/to/large/file.ext" \
+#     -H "Authorization: token $GITHUB_TOKEN" \
+#     -H "Accept: application/vnd.github.v3+json" \
+#     https://uploads.github.com/repos/<username>/<repo>/releases/<id>/assets?name=<name> | cat
+
 name: build
 
 on:
@@ -23,24 +31,40 @@ jobs:
           - ubuntu-latest
           - windows-latest
           # - macos-latest
-    name: prebuild on ${{ matrix.os }}
+    name: build on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v2
+      # - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: 17
       - run: |
-          curl -fsSL $(npm view better-sqlite3 dist.tarball) | tar -xz
+          curl -fsSL $( npm view better-sqlite3 dist.tarball ) | tar -xz
           cd package
           npm i --ignore-scripts
+          #
+          # update sqlite sources
+          # version=$(git ls-remote --tags git://github.com/sqlite/sqlite.git | perl -lne 'm[refs/tags/version-([\d.]+)$]sm ? print $1 : next' | sort -V | tail -n 1)
+          # curl -fsSLo deps/sqlite3.zip https://www.sqlite.org/2021/sqlite-amalgamation-3370100.zip
+          # unzip -j deps/sqlite3.zip -d sqlite
+          # tar cvfz deps/sqlite.tar.gz sqlite
           #
           # patch
           sed -i -e '/SQLITE_USE_URI=0/ s/=0/=1/' deps/defines.gypi
           #
           # build
-          npx --no-install prebuild --strip --include-regex 'better_sqlite3.node$' -r node
-          # npx --no-install prebuild --strip --include-regex "better_sqlite3.node$" -r electron -t 15.0.0
+          npx --no-install prebuild --strip --include-regex "better_sqlite3.node$" -r node
+          # npx --no-install prebuild --strip --include-regex "better_sqlite3.node$" -u ${{ secrets.GITHUB_TOKEN }} -r electron -t 16.0.0
+          #
+          TAG=v1.9.0 # data
+          RELEASE_ID=$( node -pe "JSON.parse( process.argv[1] ).id" "$( curl -fsSl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/softvisio/sqlite/releases/tags/$TAG )" )
+          for f in prebuilds/*.tar.gz; do
+            echo "1-Processing $f file.. - $RELEASE_ID"
+          done
+          #
+          # XXX get release asset id by name
+          # XXX delete release asset
+          # XXX upload new release asset
           #
           # cp prebuilds/*.tar.gz /var/local/mount
           # commit
