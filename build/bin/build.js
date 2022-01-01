@@ -31,8 +31,7 @@ childProcess.spawnSync( "npx", ["--no-install", "prebuild", "--strip", "--includ
 const gitHubApi = new GitHubApi( process.env.GITHUB_TOKEN );
 
 const release = await gitHubApi.getReleaseByTagName( REPO, TAG );
-
-// if ( !release.ok ) process.exit( 1 );
+if ( !release.ok ) process.exit( 1 );
 
 for ( const file of glob( "prebuilds/*.tar.gz", { cwd, "sync": true } ) ) {
     const name = path.basename( file ).replace( /better-sqlite3-v\d+\.\d+\.\d+-/, "" );
