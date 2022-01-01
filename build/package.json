@@ -2,7 +2,8 @@
     "private": true,
     "type": "module",
     "imports": {
-        "#core/*": "@softvisio/core/*"
+        "#core/*": "@softvisio/core/*",
+        "#lib/*": "./lib/*.js"
     },
     "scripts": {
         "build": "node bin/build.js"

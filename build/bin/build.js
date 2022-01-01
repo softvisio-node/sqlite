@@ -9,15 +9,22 @@ import File from "#core/file";
 
 const REPO = "softvisio/sqlite";
 const TAG = "v1.9.0";
-const ELECTRON = "16.0.1";
+const sqliteUrl = "https://www.sqlite.org/2021/sqlite-amalgamation-3370100.zip";
+
+// const ELECTRON = "16.0.1";
 
 // find better-sqlit3 location
 const cwd = path.dirname( resolve( "better-sqlite3/package.json", import.meta.url ) );
 
 // install better-sqlite3 deps
-childProcess.spawnSync( "npm", ["i", "--ignore-scripts"], { cwd, "shell": true, "stdio": "inherit" } );
+// childProcess.spawnSync( "npm", ["i", "--ignore-scripts"], { cwd, "shell": true, "stdio": "inherit" } );
 
 // XXX update sqlite sources
+childProcess.spawnSync( "curl", ["-fsSLo", "deps/sqlite3.zip", sqliteUrl], { cwd, "shell": true, "stdio": "inherit" } );
+childProcess.spawnSync( "unzip", ["-j", "deps/sqlite3.zip", "-d", "sqlite"], { cwd, "shell": true, "stdio": "inherit" } );
+childProcess.spawnSync( "tar", ["cvfz", "deps/sqlite.tar.gz", "sqlite"], { cwd, "shell": true, "stdio": "inherit" } );
+
+process.exit();
 
 // patch
 childProcess.spawnSync( "sed", ["-i", "-e", "'/SQLITE_USE_URI=0/ s/=0/=1/'", "deps/defines.gypi"], { cwd, "shell": true, "stdio": "inherit" } );
@@ -26,7 +33,7 @@ childProcess.spawnSync( "sed", ["-i", "-e", "'/SQLITE_USE_URI=0/ s/=0/=1/'", "de
 childProcess.spawnSync( "npx", ["--no-install", "prebuild", "--strip", "--include-regex", "better_sqlite3.node$", "-r", "node"], { cwd, "shell": true, "stdio": "inherit" } );
 
 // build for current electron version
-childProcess.spawnSync( "npx", ["--no-install", "prebuild", "--strip", "--include-regex", "better_sqlite3.node$", "-r", "electron", "-t", ELECTRON], { cwd, "shell": true, "stdio": "inherit" } );
+// childProcess.spawnSync( "npx", ["--no-install", "prebuild", "--strip", "--include-regex", "better_sqlite3.node$", "-r", "electron", "-t", ELECTRON], { cwd, "shell": true, "stdio": "inherit" } );
 
 const gitHubApi = new GitHubApi( process.env.GITHUB_TOKEN );
 
