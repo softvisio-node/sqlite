@@ -34,5 +34,5 @@ jobs:
           node-version: 17
       - run: |
           cd build
-          npm i
+          npm i --ignore-scripts
           npm run build

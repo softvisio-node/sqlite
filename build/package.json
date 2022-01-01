@@ -1,10 +1,14 @@
 {
     "private": true,
     "type": "module",
+    "imports": {
+        "#core/*": "@softvisio/core/*"
+    },
     "scripts": {
         "build": "node bin/build.js"
     },
     "dependencies": {
-        "@softvisio/core": "^6.36.5"
+        "@softvisio/core": "^6.36.5",
+        "better-sqlite3": "^7.4.6"
     }
 }
