@@ -21,8 +21,8 @@ jobs:
       matrix:
         os:
           - ubuntu-latest
-          - windows-latest
-          - macos-latest
+          # - windows-latest
+          # - macos-latest
     name: build on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     steps:
@@ -31,7 +31,7 @@ jobs:
         with:
           node-version: 17
       - run: |
-          GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN={{ secrets.GITHUB_TOKEN }}
           cd build
           npm i
           npm run build
