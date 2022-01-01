@@ -9,7 +9,7 @@ import File from "#core/file";
 
 const REPO = "softvisio/sqlite";
 const TAG = "v1.9.0";
-const ELECTRON = "16.0.0";
+const ELECTRON = "16.0.1";
 
 // find better-sqlit3 location
 const cwd = path.dirname( resolve( "better-sqlite3/package.json", import.meta.url ) );
