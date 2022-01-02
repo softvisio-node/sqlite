@@ -70,5 +70,5 @@ async function updateSqlite () {
     out.once( "error", e => console.log( e ) );
     z.once( "error", e => console.log( e ) );
 
-    await new Promise( resolve => out.once( "close", resolve ) );
+    return new Promise( resolve => out.once( "close", resolve ) );
 }
