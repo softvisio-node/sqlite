@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.11.0 (2022-01-02)
+
+Features:
+
+-   feat: bindings renamed
+
 ### 1.10.0 (2022-01-02)
 
 Features:
