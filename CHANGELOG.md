@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.10.0 (2022-01-02)
+
+Features:
+
+-   feat: build on github
+
 ### 1.9.0 (2021-12-30)
 
 Features:
