@@ -12,7 +12,7 @@ import zlib from "zlib";
 import fs from "fs";
 
 const REPO = "softvisio/sqlite";
-const TAG = "v1.9.0";
+const TAG = "data";
 const sqliteUrl = "https://www.sqlite.org/2021/sqlite-amalgamation-3370100.zip";
 
 // const ELECTRON = "16.0.1";
