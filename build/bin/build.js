@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 
+import stream from "#core/stream";
 import { resolve } from "#core/utils";
 import path from "path";
+import tar from "#core/tar";
 import childProcess from "child_process";
 import GitHubApi from "#core/api/github";
 import glob from "#core/glob";
@@ -78,28 +80,25 @@ async function repack ( _path ) {
         .replace( /better-sqlite3-v\d+\.\d+\.\d+-/, "" )
         .replace( ".tar.gz", "" );
 
-    const extract = tarStream.extract(),
-        pack = tarStream.pack(),
-        tarIn = fs.createReadStream( _path ),
-        tarOut = fs.createWriteStream( name + ".tar.gz" ),
-        zipIn = zlib.createGunzip(),
-        zipOut = zlib.createGzip();
+    return new Promise( resolve => {
+        const pack = new tar.Pack( {
+            "portable": true,
+            "gzip": true,
+        } );
 
-    extract.on( "entry", ( header, stream, callback ) => {
-        header.name = name + ".node";
+        fs.createReadStream( _path )
+            .pipe( new tar.Parse( { "strict": true } ) )
+            .on( "entry", entry => {
+                entry.path = name + ".node";
 
-        stream.pipe( pack.entry( header, callback ) );
+                pack.write( entry );
+            } )
+            .on( "end", async () => {
+                pack.end();
+
+                const buffer = await pack.pipe( new stream.PassThrough() ).buffer();
+
+                resolve( new File( { "name": name + ".tar.gz", "content": buffer } ) );
+            } );
     } );
-
-    extract.on( "finish", () => pack.finalize() );
-
-    tarIn.pipe( zipIn );
-    zipIn.pipe( extract );
-
-    pack.pipe( zipOut );
-    zipOut.pipe( tarOut );
-
-    await new Promise( resolve => tarOut.once( "close", resolve ) );
-
-    return new File( { "path": name + ".tar.gz" } );
 }
