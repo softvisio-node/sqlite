@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.11.1 (2022-01-02)
+
+Fixes:
+
+-   fix: build
+
 ### 1.11.0 (2022-01-02)
 
 Features:
