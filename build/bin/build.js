@@ -41,9 +41,8 @@ const release = await gitHubApi.getReleaseByTagName( REPO, TAG );
 if ( !release.ok ) process.exit( 1 );
 
 for ( const file of glob( "prebuilds/*.tar.gz", { cwd, "sync": true } ) ) {
-    const name = path.basename( file ).replace( /better-sqlite3-v\d+\.\d+\.\d+-/, "" );
+    const res = await gitHubApi.updateReleaseAsset( REPO, release.data.id, await repack( path.join( cwd, file ) ) );
 
-    const res = await gitHubApi.updateReleaseAsset( REPO, release.data.id, new File( { "path": path.join( cwd, file ), name } ) );
     if ( !res.ok ) process.exit( 1 );
 }
 
@@ -71,4 +70,36 @@ async function updateSqlite () {
     z.once( "error", e => console.log( e ) );
 
     return new Promise( resolve => out.once( "close", resolve ) );
+}
+
+async function repack ( _path ) {
+    const name = path
+        .basename( _path )
+        .replace( /better-sqlite3-v\d+\.\d+\.\d+-/, "" )
+        .replace( ".tar.gz", "" );
+
+    const extract = tarStream.extract(),
+        pack = tarStream.pack(),
+        tarIn = fs.createReadStream( _path ),
+        tarOut = fs.createWriteStream( name + ".tar.gz" ),
+        zipIn = zlib.createGunzip(),
+        zipOut = zlib.createGzip();
+
+    extract.on( "entry", ( header, stream, callback ) => {
+        header.name = name + ".node";
+
+        stream.pipe( pack.entry( header, callback ) );
+    } );
+
+    extract.on( "finish", () => pack.finalize() );
+
+    tarIn.pipe( zipIn );
+    zipIn.pipe( extract );
+
+    pack.pipe( zipOut );
+    zipOut.pipe( tarOut );
+
+    await new Promise( resolve => tarOut.once( "close", resolve ) );
+
+    return new File( { "path": name + ".tar.gz" } );
 }
