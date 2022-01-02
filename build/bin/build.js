@@ -65,7 +65,5 @@ async function updateSqlite () {
 
     tar.pipe( zlib.createGzip().pipe( out ) );
 
-    await new Promise( resolve => out.once( "end", resolve ) );
-
-    process.exit();
+    return new Promise( resolve => out.once( "end", resolve ) );
 }
