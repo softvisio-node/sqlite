@@ -64,9 +64,11 @@ async function updateSqlite () {
     const out = fs.createWriteStream( path.join( cwd, "deps/sqlite3.tar.gz" ) ),
         z = zlib.createGzip();
 
+    tar.pipe( z );
     z.pipe( out );
 
-    tar.pipe( z );
+    out.once( "error", e => console.log( e ) );
+    z.once( "error", e => console.log( e ) );
 
-    return new Promise( resolve => out.once( "end", resolve ) );
+    await new Promise( resolve => out.once( "close", resolve ) );
 }
