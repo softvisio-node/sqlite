@@ -16,9 +16,6 @@
     "exports": {
         ".": "./lib/index.js"
     },
-    "dependencies": {
-        "bindings": "^1.5.0"
-    },
     "engines": {
         "node": ">=16.0.0",
         "npm": ">=7.10.0"
