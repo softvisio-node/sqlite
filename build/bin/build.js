@@ -61,7 +61,7 @@ async function updateSqlite () {
 
     tar.finalize();
 
-    const out = fs.createWriteStream( path.join( cwd, "deps/sqlite.tar.gz" ) );
+    const out = fs.createWriteStream( path.join( cwd, "deps/sqlite3.tar.gz" ) );
 
     tar.pipe( zlib.createGzip().pipe( out ) );
 
