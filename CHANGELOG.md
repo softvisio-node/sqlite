@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.12.3 (2022-01-03)
+
+Fixes:
+
+-   fix: better sqlite set to latest
+
 ### 1.12.2 (2022-01-03)
 
 Fixes:
