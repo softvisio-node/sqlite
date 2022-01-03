@@ -9,8 +9,6 @@ import GitHubApi from "#core/api/github";
 import glob from "#core/glob";
 import File from "#core/file";
 import AdmZip from "adm-zip";
-import tarStream from "tar-stream";
-import zlib from "zlib";
 import fs from "fs";
 
 const REPO = "softvisio/sqlite";
@@ -52,26 +50,24 @@ async function updateSqlite () {
     childProcess.spawnSync( "curl", ["-fsSLo", "deps/sqlite3.zip", sqliteUrl], { cwd, "shell": true, "stdio": "inherit" } );
 
     const zip = new AdmZip( path.join( cwd, "deps/sqlite3.zip" ) ),
-        tar = tarStream.pack();
+        tar = new tar.Pack( {
+            "portable": true,
+            "gzip": true,
+        } );
+
+    const out = fs.createWriteStream( path.join( cwd, "deps/sqlite3.tar.gz" ) );
+
+    tar.pipe( out );
 
     zip.getEntries().forEach( f => {
         if ( !f.name ) return;
 
-        tar.entry( { "name": f.name }, f.getData() );
+        tar.addFile( { "name": f.name, "content": f.getData() } );
     } );
 
-    tar.finalize();
+    tar.end();
 
-    const out = fs.createWriteStream( path.join( cwd, "deps/sqlite3.tar.gz" ) ),
-        z = zlib.createGzip();
-
-    tar.pipe( z );
-    z.pipe( out );
-
-    out.once( "error", e => console.log( e ) );
-    z.once( "error", e => console.log( e ) );
-
-    return new Promise( resolve => out.once( "close", resolve ) );
+    return new Promise( resolve => out.once( "end", resolve ) );
 }
 
 async function repack ( _path ) {
