@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import stream from "#core/stream";
+import "#core/stream";
 import { resolve } from "#core/utils";
 import path from "path";
 import tar from "#core/tar";
@@ -10,6 +10,7 @@ import glob from "#core/glob";
 import File from "#core/file";
 import AdmZip from "adm-zip";
 import fs from "fs";
+import zlib from "zlib";
 
 const REPO = "softvisio/sqlite";
 const TAG = "data";
@@ -42,7 +43,6 @@ if ( !release.ok ) process.exit( 1 );
 
 for ( const file of glob( "prebuilds/*.tar.gz", { cwd, "sync": true } ) ) {
     const res = await gitHubApi.updateReleaseAsset( REPO, release.data.id, await repack( path.join( cwd, file ) ) );
-
     if ( !res.ok ) process.exit( 1 );
 }
 
@@ -74,27 +74,15 @@ async function repack ( _path ) {
     const name = path
         .basename( _path )
         .replace( /better-sqlite3-v\d+\.\d+\.\d+-/, "" )
-        .replace( ".tar.gz", "" );
+        .replace( ".tar.gz", ".gz" );
 
     return new Promise( resolve => {
-        const pack = new tar.Pack( {
-            "portable": true,
-            "gzip": true,
-        } );
+        const gzip = zlib.createGzip();
+
+        gzip.buffer().then( buffer => resolve( new File( { name, "content": buffer } ) ) );
 
         fs.createReadStream( _path )
             .pipe( new tar.Parse( { "strict": true } ) )
-            .on( "entry", entry => {
-                entry.path = name + ".node";
-
-                pack.write( entry );
-            } )
-            .on( "end", async () => {
-                pack.end();
-
-                const buffer = await pack.pipe( new stream.PassThrough() ).buffer();
-
-                resolve( new File( { "name": name + ".tar.gz", "content": buffer } ) );
-            } );
+            .on( "entry", entry => entry.pipe( gzip ) );
     } );
 }
