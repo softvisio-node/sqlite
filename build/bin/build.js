@@ -74,7 +74,7 @@ async function repack ( _path ) {
     const name = path
         .basename( _path )
         .replace( /better-sqlite3-v\d+\.\d+\.\d+-/, "" )
-        .replace( ".tar.gz", ".gz" );
+        .replace( ".tar.gz", ".node.gz" );
 
     return new Promise( resolve => {
         const gzip = zlib.createGzip();
