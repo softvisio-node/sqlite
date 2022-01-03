@@ -8,7 +8,7 @@ const url = new URL( "https://github.com/softvisio/sqlite/releases/download/data
 
 await get( url, `node-v${process.versions.modules}-${process.platform}-${process.arch}.node` );
 
-// under windows download linux bindings for vmware
+// under windows download linux binaries for vmware
 if ( process.platform === "win32" ) await get( url, `node-v${process.versions.modules}-linux-${process.arch}.node` );
 
 async function get ( url, file ) {
@@ -19,10 +19,10 @@ async function get ( url, file ) {
             if ( res.statusCode !== 302 ) return resolve();
 
             https.get( res.headers.location, res => {
-                fs.mkdirSync( "lib/bindings", { "recursive": true } );
+                fs.mkdirSync( "lib/binaries", { "recursive": true } );
 
                 res.pipe( zlib.createGunzip() )
-                    .pipe( fs.createWriteStream( `lib/bindings/${file}` ) )
+                    .pipe( fs.createWriteStream( `lib/binaries/${file}` ) )
                     .on( "close", () => resolve( true ) )
                     .on( "error", e => resolve() );
             } );

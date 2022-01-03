@@ -5,4 +5,4 @@
 # node
 /node_modules/
 
-/lib/bindings/
+/lib/binaries/
