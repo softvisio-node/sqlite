@@ -1,5 +1,15 @@
 # Changelog
 
+### 1.12.0 (2022-01-03)
+
+Features:
+
+-   feat: tar.addFile()
+
+Fixes:
+
+-   fix: bindings
+
 ### 1.11.1 (2022-01-02)
 
 Fixes:
