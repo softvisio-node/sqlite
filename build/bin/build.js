@@ -50,22 +50,22 @@ async function updateSqlite () {
     childProcess.spawnSync( "curl", ["-fsSLo", "deps/sqlite3.zip", sqliteUrl], { cwd, "shell": true, "stdio": "inherit" } );
 
     const zip = new AdmZip( path.join( cwd, "deps/sqlite3.zip" ) ),
-        tar = new tar.Pack( {
+        pack = new tar.Pack( {
             "portable": true,
             "gzip": true,
         } );
 
     const out = fs.createWriteStream( path.join( cwd, "deps/sqlite3.tar.gz" ) );
 
-    tar.pipe( out );
+    pack.pipe( out );
 
-    zip.getEntries().forEach( f => {
+    zip.getEntries().forEach( async f => {
         if ( !f.name ) return;
 
-        tar.addFile( { "name": f.name, "content": f.getData() } );
+        await pack.addFile( { "name": f.name, "content": f.getData() } );
     } );
 
-    tar.end();
+    pack.end();
 
     return new Promise( resolve => out.once( "end", resolve ) );
 }
