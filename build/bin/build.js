@@ -59,11 +59,11 @@ async function updateSqlite () {
 
     pack.pipe( out );
 
-    zip.getEntries().forEach( async f => {
-        if ( !f.name ) return;
+    for ( const entry of zip.getEntries() ) {
+        if ( !entry.name ) return;
 
-        await pack.addFile( { "name": f.name, "content": f.getData() } );
-    } );
+        await pack.addFile( { "name": entry.name, "content": entry.getData() } );
+    }
 
     pack.end();
 
