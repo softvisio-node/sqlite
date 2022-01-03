@@ -9,7 +9,7 @@
         "build": "node bin/build.js"
     },
     "dependencies": {
-        "@softvisio/core": "^6.36.5",
+        "@softvisio/core": "latest",
         "adm-zip": "^0.5.9",
         "better-sqlite3": "latest"
     }
