@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.12.8 (2022-01-04)
+
+Fixes:
+
+-   fix: repack tar on build
+
 ### 1.12.7 (2022-01-04)
 
 Fixes:
