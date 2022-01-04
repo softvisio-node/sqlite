@@ -62,7 +62,7 @@ async function updateSqlite () {
     for ( const entry of zip.getEntries() ) {
         if ( !entry.name ) return;
 
-        await pack.addFile( { "name": entry.name, "content": entry.getData() } );
+        await pack.add( { "path": entry.name, "content": entry.getData() } );
     }
 
     pack.end();
