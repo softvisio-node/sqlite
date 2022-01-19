@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.13.0 (2022-01-19)
+
+Features:
+
+-   feat: better-sqlite3 v7.5.0
+
 ### 1.12.9 (2022-01-06)
 
 Fixes:
