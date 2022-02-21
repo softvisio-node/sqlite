@@ -2,17 +2,17 @@
     "name": "@softvisio/sqlite",
     "version": "1.13.0",
     "description": "better-sqlite3 re-packed",
-    "homepage": "https://github.com/softvisio/sqlite",
+    "homepage": "https://softvisio.github.io/sqlite/",
     "bugs": {
         "url": "https://github.com/softvisio/sqlite/issues",
-        "email": "zdm@softvisio.net"
+        "email": "zdm <zdm@softvisio.net>"
     },
     "repository": {
         "type": "git",
         "url": "https://github.com/softvisio/sqlite.git"
     },
     "license": "ISC",
-    "author": "<zdm@softvisio.net>",
+    "author": "zdm <zdm@softvisio.net>",
     "exports": {
         ".": "./lib/index.js"
     },
