@@ -14,7 +14,7 @@ import zlib from "zlib";
 
 const REPO = "softvisio/sqlite";
 const TAG = "data";
-const sqliteUrl = "https://www.sqlite.org/2022/sqlite-amalgamation-3370200.zip";
+const sqliteUrl = "https://www.sqlite.org/2022/sqlite-amalgamation-3380000.zip";
 
 // const ELECTRON = "16.0.1";
 
