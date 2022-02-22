@@ -18,6 +18,8 @@ const sqliteUrl = "https://www.sqlite.org/2022/sqlite-amalgamation-3380000.zip";
 
 // const ELECTRON = "16.0.1";
 
+console.log( `Downloading SQLite:`, sqliteUrl );
+
 // find better-sqlit3 location
 const cwd = path.dirname( resolve( "better-sqlite3/package.json", import.meta.url ) );
 
