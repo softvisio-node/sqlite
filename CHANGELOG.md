@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.14.0 (2022-02-22)
+
+Features:
+
+-   feat: sqlite 3.38
+
 ### 1.13.1 (2022-02-21)
 
 Fixes:
