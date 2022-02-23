@@ -36,4 +36,5 @@ jobs:
           python --version
           cd build
           npm i --ignore-scripts
+          npm i @mapbox/node-pre-gyp
           npm run build
