@@ -22,9 +22,9 @@ jobs:
     strategy:
       matrix:
         os:
-          # - ubuntu-latest
+          - ubuntu-latest
           - windows-latest
-          # - macos-latest
+          - macos-latest
     name: build on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     steps:
@@ -35,8 +35,4 @@ jobs:
       - run: |
           cd build
           npm i --ignore-scripts
-          # npm config set msvs_version 2022 --global
-          # npm config set msvs_version 2022 --global
-          # npm config set msvs_version 2022
-          # npm i @mapbox/node-pre-gyp
           npm run build
