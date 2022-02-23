@@ -10,6 +10,7 @@ import glob from "#core/glob";
 import File from "#core/file";
 import AdmZip from "adm-zip";
 import fs from "fs";
+import fetch from "#core/fetch";
 import zlib from "zlib";
 import env from "#core/env";
 
@@ -17,11 +18,8 @@ env.loadUserEnv();
 
 const REPO = "softvisio/sqlite";
 const TAG = "data";
-const sqliteUrl = "https://www.sqlite.org/2022/sqlite-amalgamation-3380000.zip";
 
 // const ELECTRON = "16.0.1";
-
-console.log( `Downloading SQLite:`, sqliteUrl );
 
 // find better-sqlit3 location
 const cwd = path.dirname( resolve( "better-sqlite3/package.json", import.meta.url ) );
@@ -54,27 +52,22 @@ for ( const file of glob( "prebuilds/*.tar.gz", { cwd, "sync": true } ) ) {
 }
 
 async function updateSqlite () {
+    const res = await fetch( "https://www.sqlite.org/download.html" );
+    const html = await res.text();
+
+    const match = html.match( /(\d{4}\/sqlite-amalgamation-3\d{6}.zip)/ );
+
+    const sqliteUrl = `https://www.sqlite.org/${match[1]}`;
+
     childProcess.spawnSync( "curl", ["-fsSLo", "deps/sqlite3.zip", sqliteUrl], { cwd, "shell": true, "stdio": "inherit" } );
 
-    const zip = new AdmZip( path.join( cwd, "deps/sqlite3.zip" ) ),
-        pack = new tar.Pack( {
-            "portable": true,
-            "gzip": true,
-        } );
-
-    const out = fs.createWriteStream( path.join( cwd, "deps/sqlite3.tar.gz" ) );
-
-    pack.pipe( out );
+    const zip = new AdmZip( path.join( cwd, "deps/sqlite3.zip" ) );
 
     for ( const entry of zip.getEntries() ) {
         if ( !entry.name ) return;
 
-        pack.add( { "path": entry.name, "content": entry.getData() } );
+        fs.writeFileSync( path.join( cwd, "deps/sqlite3", entry.name ), entry.getData() );
     }
-
-    pack.end();
-
-    return new Promise( resolve => out.once( "end", resolve ) );
 }
 
 async function repack ( _path ) {
