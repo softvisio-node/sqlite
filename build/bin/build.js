@@ -64,7 +64,7 @@ async function updateSqlite () {
     const zip = new AdmZip( path.join( cwd, "deps/sqlite3.zip" ) );
 
     for ( const entry of zip.getEntries() ) {
-        if ( !entry.name ) return;
+        if ( !entry.name ) continue;
 
         fs.writeFileSync( path.join( cwd, "deps/sqlite3", entry.name ), entry.getData() );
     }
