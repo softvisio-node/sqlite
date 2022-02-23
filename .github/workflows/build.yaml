@@ -22,9 +22,9 @@ jobs:
     strategy:
       matrix:
         os:
-          - ubuntu-latest
+          # - ubuntu-latest
           - windows-latest
-          - macos-latest
+          # - macos-latest
     name: build on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     steps:
@@ -33,6 +33,7 @@ jobs:
         with:
           node-version: 17
       - run: |
+          python --version
           cd build
           npm i --ignore-scripts
           npm run build
