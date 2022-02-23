@@ -36,7 +36,7 @@ jobs:
           cd build
           npm i --ignore-scripts
           # npm config set msvs_version 2022 --global
-          npm config set msvs_version 2022 --global
-          npm config set msvs_version 2022
+          # npm config set msvs_version 2022 --global
+          # npm config set msvs_version 2022
           # npm i @mapbox/node-pre-gyp
           npm run build

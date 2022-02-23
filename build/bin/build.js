@@ -27,6 +27,9 @@ const cwd = path.dirname( resolve( "better-sqlite3/package.json", import.meta.ur
 // install better-sqlite3 deps
 childProcess.spawnSync( "npm", ["i", "--ignore-scripts"], { cwd, "shell": true, "stdio": "inherit" } );
 
+// update node-gyp to the latest version
+childProcess.spawnSync( "npm", ["i", "--ignore-scripts", "node-gyp@latest"], { "cwd": path.join( cwd, "node-modules/prebuild" ), "shell": true, "stdio": "inherit" } );
+
 // update sqlite sources
 await updateSqlite();
 
