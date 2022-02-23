@@ -33,9 +33,8 @@ jobs:
         with:
           node-version: 17
       - run: |
-          python --version
           cd build
           npm i --ignore-scripts
-          npm config set msvs_version 2022 --global
-          npm i @mapbox/node-pre-gyp
+          # npm config set msvs_version 2022 --global
+          # npm i @mapbox/node-pre-gyp
           npm run build

@@ -11,6 +11,9 @@ import File from "#core/file";
 import AdmZip from "adm-zip";
 import fs from "fs";
 import zlib from "zlib";
+import env from "#core/env";
+
+env.loadUserEnv();
 
 const REPO = "softvisio/sqlite";
 const TAG = "data";
