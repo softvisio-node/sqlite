@@ -21,17 +21,18 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     strategy:
       matrix:
-        os:
-          - ubuntu-latest
-          - windows-latest
-          - macos-latest
-    name: build on ${{ matrix.os }}
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        architecture: [x64]
+        node-version: [18]
+    name: build on ${{ matrix.os }} ${{ matrix.architecture }} node ${{ matrix.node-version }}
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: ${{ matrix.node-version }}
+          architecture: ${{ matrix.architecture }}
+          check-latest: true
       - run: |
           cd build
           npm i --ignore-scripts
