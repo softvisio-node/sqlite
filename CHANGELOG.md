@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.14.5 (2022-04-20)
+
+Fixes:
+
+-   fix: node version 18
+
 ### 1.14.4 (2022-02-23)
 
 Fixes:
