@@ -34,7 +34,7 @@ if ( res.status ) process.exit( res.status );
 await updateSqlite();
 
 // patch
-res = childProcess.spawnSync( "sed", ["-i", "-e", "'/SQLITE_USE_URI=0/ s/=0/=1/'", "deps/defines.gypi"], { cwd, "stdio": "inherit" } );
+res = childProcess.spawnSync( "sed", ["-i", "-e", "/SQLITE_USE_URI=0/ s/=0/=1/", "deps/defines.gypi"], { cwd, "stdio": "inherit" } );
 if ( res.status ) process.exit( res.status );
 
 // build for current nodejs version
