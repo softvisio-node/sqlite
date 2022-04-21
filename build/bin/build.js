@@ -19,28 +19,27 @@ env.loadUserEnv();
 const REPO = "softvisio/sqlite";
 const TAG = "data";
 
-// const ELECTRON = "16.0.1";
-
 // find better-sqlit3 location
 const cwd = path.dirname( resolve( "better-sqlite3/package.json", import.meta.url ) );
 
 // install better-sqlite3 deps
-childProcess.spawnSync( "npm", ["i", "--ignore-scripts"], { cwd, "shell": true, "stdio": "inherit" } );
+var res = childProcess.spawnSync( "npm", ["i", "--ignore-scripts"], { cwd, "stdio": "inherit" } );
+if ( res.status ) process.exit( res.status );
 
 // update node-gyp to the latest version
-childProcess.spawnSync( "npm", ["i", "--ignore-scripts", "node-gyp@latest"], { "cwd": path.join( cwd, "node_modules/prebuild" ), "shell": true, "stdio": "inherit" } );
+res = childProcess.spawnSync( "npm", ["i", "--ignore-scripts", "node-gyp@latest"], { "cwd": path.join( cwd, "node_modules/prebuild" ), "stdio": "inherit" } );
+if ( res.status ) process.exit( res.status );
 
 // update sqlite sources
 await updateSqlite();
 
 // patch
-childProcess.spawnSync( "sed", ["-i", "-e", "'/SQLITE_USE_URI=0/ s/=0/=1/'", "deps/defines.gypi"], { cwd, "shell": true, "stdio": "inherit" } );
+res = childProcess.spawnSync( "sed", ["-i", "-e", "'/SQLITE_USE_URI=0/ s/=0/=1/'", "deps/defines.gypi"], { cwd, "stdio": "inherit" } );
+if ( res.status ) process.exit( res.status );
 
 // build for current nodejs version
-childProcess.spawnSync( "npx", ["--no-install", "prebuild", "--strip", "--include-regex", "better_sqlite3.node$", "-r", "node"], { cwd, "shell": true, "stdio": "inherit" } );
-
-// build for current electron version
-// childProcess.spawnSync( "npx", ["--no-install", "prebuild", "--strip", "--include-regex", "better_sqlite3.node$", "-r", "electron", "-t", ELECTRON], { cwd, "shell": true, "stdio": "inherit" } );
+res = childProcess.spawnSync( "npx", ["--no-install", "prebuild", "--strip", "--include-regex", "better_sqlite3.node$", "-r", "node"], { cwd, "stdio": "inherit" } );
+if ( res.status ) process.exit( res.status );
 
 const gitHubApi = new GitHubApi( process.env.GITHUB_TOKEN );
 
@@ -55,14 +54,15 @@ for ( const file of glob( "prebuilds/*.tar.gz", { cwd, "sync": true } ) ) {
 }
 
 async function updateSqlite () {
-    const res = await fetch( "https://www.sqlite.org/download.html" );
+    let res = await fetch( "https://www.sqlite.org/download.html" );
+    if ( !res.ok ) process.exit( res.status );
+
     const html = await res.text();
 
-    const match = html.match( /(\d{4}\/sqlite-amalgamation-3\d{6}.zip)/ );
+    const sqliteUrl = "https://www.sqlite.org/" + html.match( /(\d{4}\/sqlite-amalgamation-3\d{6}.zip)/ )[1];
 
-    const sqliteUrl = `https://www.sqlite.org/${match[1]}`;
-
-    childProcess.spawnSync( "curl", ["-fsSLo", "deps/sqlite3.zip", sqliteUrl], { cwd, "shell": true, "stdio": "inherit" } );
+    res = childProcess.spawnSync( "curl", ["-fsSLo", "deps/sqlite3.zip", sqliteUrl], { cwd, "stdio": "inherit" } );
+    if ( res.status ) process.exit( res.status );
 
     const zip = new AdmZip( path.join( cwd, "deps/sqlite3.zip" ) );
 
