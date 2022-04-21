@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.14.7 (2022-04-21)
+
+Fixes:
+
+-   fix: build child process spawn
+
 ### 1.14.6 (2022-04-20)
 
 Fixes:
