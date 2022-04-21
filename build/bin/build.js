@@ -23,22 +23,38 @@ const TAG = "data";
 const cwd = path.dirname( resolve( "better-sqlite3/package.json", import.meta.url ) );
 
 // install better-sqlite3 deps
-var res = childProcess.spawnSync( "npm", ["i", "--ignore-scripts"], { cwd, "stdio": "inherit", "shell": true } );
+var res = childProcess.spawnSync( "npm", ["i", "--ignore-scripts"], {
+    cwd,
+    "shell": true,
+    "stdio": "inherit",
+} );
 if ( res.status ) process.exit( res.status );
 
 // update node-gyp to the latest version
-res = childProcess.spawnSync( "npm", ["i", "--ignore-scripts", "node-gyp@latest"], { "cwd": path.join( cwd, "node_modules/prebuild" ), "stdio": "inherit", "shell": true } );
+res = childProcess.spawnSync( "npm", ["i", "--ignore-scripts", "node-gyp@latest"], {
+    "cwd": path.join( cwd, "node_modules/prebuild" ),
+    "shell": true,
+    "stdio": "inherit",
+} );
 if ( res.status ) process.exit( res.status );
 
 // update sqlite sources
 await updateSqlite();
 
 // patch
-res = childProcess.spawnSync( "sed", ["-i", "-e", `"/SQLITE_USE_URI=0/ s/=0/=1/"`, "deps/defines.gypi"], { cwd, "stdio": "inherit", "shell": true } );
+res = childProcess.spawnSync( "sed", ["-i", "-e", `"/SQLITE_USE_URI=0/ s/=0/=1/"`, "deps/defines.gypi"], {
+    cwd,
+    "shell": true,
+    "stdio": "inherit",
+} );
 if ( res.status ) process.exit( res.status );
 
 // build for current nodejs version
-res = childProcess.spawnSync( "npx", ["--no-install", "prebuild", "--strip", "--include-regex", "better_sqlite3.node$", "-r", "node"], { cwd, "stdio": "inherit", "shell": true } );
+res = childProcess.spawnSync( "npx", ["--no-install", "prebuild", "--strip", "--include-regex", "better_sqlite3.node$", "-r", "node"], {
+    cwd,
+    "shell": true,
+    "stdio": "inherit",
+} );
 if ( res.status ) process.exit( res.status );
 
 const gitHubApi = new GitHubApi( process.env.GITHUB_TOKEN );
@@ -61,7 +77,11 @@ async function updateSqlite () {
 
     const sqliteUrl = "https://www.sqlite.org/" + html.match( /(\d{4}\/sqlite-amalgamation-3\d{6}.zip)/ )[1];
 
-    res = childProcess.spawnSync( "curl", ["-fsSLo", "deps/sqlite3.zip", sqliteUrl], { cwd, "stdio": "inherit", "shell": true } );
+    res = childProcess.spawnSync( "curl", ["-fsSLo", "deps/sqlite3.zip", sqliteUrl], {
+        cwd,
+        "shell": true,
+        "stdio": "inherit",
+    } );
     if ( res.status ) process.exit( res.status );
 
     const zip = new AdmZip( path.join( cwd, "deps/sqlite3.zip" ) );
