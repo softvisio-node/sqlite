@@ -79,7 +79,6 @@ async function updateSqlite () {
 
     res = childProcess.spawnSync( "curl", ["-fsSLo", "deps/sqlite3.zip", sqliteUrl], {
         cwd,
-        "shell": true,
         "stdio": "inherit",
     } );
     if ( res.status ) process.exit( res.status );
