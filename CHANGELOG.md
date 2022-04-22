@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.14.9 (2022-04-22)
+
+Fixes:
+
+-   fix: quote shell params
+
 ### 1.14.8 (2022-04-21)
 
 Fixes:
