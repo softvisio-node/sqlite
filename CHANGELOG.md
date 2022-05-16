@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.14.10 (2022-05-16)
+
+Fixes:
+
+-   fix: build use latest node version
+
 ### 1.14.9 (2022-04-22)
 
 Fixes:
