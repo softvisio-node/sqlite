@@ -11,6 +11,8 @@ await get( url, `node-v${process.versions.modules}-${process.platform}-${process
 // under windows download linux binaries for vmware
 if ( process.platform === "win32" ) await get( url, `node-v${process.versions.modules}-linux-${process.arch}.node` );
 
+process.exit();
+
 async function get ( url, file ) {
     process.stdout.write( `Downloading: ${file} ... ` );
 
