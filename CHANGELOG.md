@@ -1,5 +1,12 @@
 # Changelog
 
+### 1.14.13 (2022-11-10)
+
+Fixes:
+
+-   fix: build for node 19
+-   fix: http keep-alive workaround
+
 ### 1.14.12 (2022-06-13)
 
 Fixes:
