@@ -11,6 +11,6 @@
     "dependencies": {
         "@softvisio/core": "latest",
         "adm-zip": "^0.5.9",
-        "better-sqlite3": "github:WiseLibs/better-sqlite3#pull/870/head"
+        "better-sqlite3": "latest"
     }
 }
