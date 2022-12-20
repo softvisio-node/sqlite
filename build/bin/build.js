@@ -101,7 +101,7 @@ async function repack ( _path ) {
     return new Promise( resolve => {
         const gzip = zlib.createGzip();
 
-        gzip.buffer().then( buffer => resolve( new File( { name, "content": buffer } ) ) );
+        gzip.buffer().then( buffer => resolve( new File( { name, buffer } ) ) );
 
         fs.createReadStream( _path )
             .pipe( new tar.Parse( { "strict": true } ) )
