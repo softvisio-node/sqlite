@@ -16,7 +16,7 @@ import env from "#core/env";
 
 env.loadUserEnv();
 
-const REPO = "softvisio/sqlite";
+const REPO = "softvisio-node/sqlite";
 const TAG = "data";
 
 // find better-sqlit3 location
