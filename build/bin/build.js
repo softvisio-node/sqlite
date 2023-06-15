@@ -62,7 +62,7 @@ const gitHubApi = new GitHubApi( process.env.GITHUB_TOKEN );
 const release = await gitHubApi.getReleaseByTagName( REPO, TAG );
 if ( !release.ok ) process.exit( 1 );
 
-for ( const file of glob.sync( "prebuilds/*.tar.gz", { cwd } ) ) {
+for ( const file of glob( "/prebuilds/*.tar.gz", { cwd } ) ) {
     console.log( `Uploading:`, file );
 
     const res = await gitHubApi.updateReleaseAsset( REPO, release.data.id, await repack( path.join( cwd, file ) ) );
