@@ -1,8 +1,8 @@
 # common
-/data/
-/wiki/
+/data
+/wiki
 
 # node
-/node_modules/
+/node_modules
 
-/lib/binaries/
+/lib/binaries
