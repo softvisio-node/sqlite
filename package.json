@@ -1,6 +1,6 @@
 {
     "name": "@softvisio/sqlite",
-    "version": "1.15.8",
+    "version": "1.15.9",
     "description": "better-sqlite3 re-packed",
     "homepage": "https://softvisio-node.github.io/sqlite/",
     "bugs": {
