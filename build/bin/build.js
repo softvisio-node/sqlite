@@ -105,14 +105,17 @@ for ( const file of glob( "**/better_sqlite3.node", { cwd } ) ) {
     if ( !res.ok ) process.exit( 1 );
 }
 
-// XXX add meta.sqlite
 async function updateSqlite () {
     let res = await fetch( "https://www.sqlite.org/download.html" );
     if ( !res.ok ) process.exit( res.status );
 
     const html = await res.text();
 
-    const sqliteUrl = "https://www.sqlite.org/" + html.match( /(\d{4}\/sqlite-amalgamation-3\d{6}.zip)/ )[1];
+    const match = html.match( /(\d{4}\/sqlite-amalgamation-(3\d{6}).zip)/ );
+
+    meta.sqlite = match[2];
+
+    const sqliteUrl = "https://www.sqlite.org/" + match[1];
 
     res = childProcess.spawnSync( "curl", ["-fsSLo", "deps/sqlite3.zip", sqliteUrl], {
         cwd,

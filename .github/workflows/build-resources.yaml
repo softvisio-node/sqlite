@@ -1,0 +1,39 @@
+name: build resources
+
+on:
+  workflow_dispatch:
+  # push:
+  #   branches:
+  #     - master
+  # pull_request:
+  #   branches:
+  #     - master
+  # release:
+  #   types:
+  #     - released
+
+jobs:
+  build:
+    defaults:
+      run:
+        shell: bash
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        architecture: [x64]
+        node-version: [current]
+    name: build on ${{ matrix.os }} ${{ matrix.architecture }} node ${{ matrix.node-version }}
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          architecture: ${{ matrix.architecture }}
+          check-latest: true
+      - run: |
+          cd build
+          npm i --ignore-scripts
+          npm run build
