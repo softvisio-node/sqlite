@@ -19,6 +19,9 @@
     "scripts": {
         "install": "node bin/install.mjs"
     },
+    "dependencies": {
+        "@softvisio/external-resources": "^1.1.11"
+    },
     "engines": {
         "node": ">=16.0.0",
         "npm": ">=7.10.0"
