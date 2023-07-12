@@ -85,7 +85,7 @@ class ExternalResource extends ExternalResourcesBuilder {
     }
 
     async _build ( location ) {
-        fs.copyFileSync( this.#file, location + "/uws.node" );
+        fs.copyFileSync( this.#file, location + "/sqlite.node" );
 
         return result( 200 );
     }
@@ -95,8 +95,7 @@ class ExternalResource extends ExternalResourcesBuilder {
     }
 }
 
-// XXX
-for ( const file of glob( "prebuilds/*.tar.gz", { cwd } ) ) {
+for ( const file of glob( "**/better_sqlite3.node", { cwd } ) ) {
     const name = `node-v${process.versions.modules}-${process.platform}-${process.arch}.node`;
 
     const resource = new ExternalResource( cwd + "/" + file, name );
@@ -129,21 +128,3 @@ async function updateSqlite () {
         fs.writeFileSync( path.join( cwd, "deps/sqlite3", entry.name ), entry.getData() );
     }
 }
-
-// XXX
-// async function repack ( _path ) {
-//     const name = path
-//         .basename( _path )
-//         .replace( /better-sqlite3-v\d+\.\d+\.\d+-/, "" )
-//         .replace( ".tar.gz", ".node.gz" );
-
-//     return new Promise( resolve => {
-//         const gzip = zlib.createGzip();
-
-//         gzip.buffer().then( buffer => resolve( new File( { name, buffer } ) ) );
-
-//         fs.createReadStream( _path )
-//             .pipe( new tar.Parse( { "strict": true } ) )
-//             .on( "entry", entry => entry.pipe( gzip ) );
-//     } );
-// }
