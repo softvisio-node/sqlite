@@ -1,6 +1,6 @@
 # common
-/data/
-/wiki/
+/data
+/wiki
 
-/build/
-/lib/binaries/
+/build
+/lib/binaries
