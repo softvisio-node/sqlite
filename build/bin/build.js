@@ -81,7 +81,7 @@ class ExternalResource extends ExternalResourcesBuilder {
     }
 
     async _getEtag () {
-        return result( 200, await this._getFileHash( this.#file ) );
+        return result( 200, "better-sqlite3:" + meta["better-sqlite3"] + ",sqlite:" + meta.sqlite );
     }
 
     async _build ( location ) {
