@@ -1,4 +1,4 @@
-name: build resources
+name: build-resources
 
 on:
   workflow_dispatch:
