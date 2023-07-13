@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.15.14 (2023-07-13)
+
+Fixes:
+
+-   fix: gitignore
+
 ### 1.15.13 (2023-07-13)
 
 Fixes:
