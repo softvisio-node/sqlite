@@ -2,11 +2,11 @@
 
 import externalResources from "@softvisio/external-resources";
 
-externalResources.add( `softvisio-node/sqlite/resources/node-v${process.versions.modules}-${process.platform}-${process.arch}.node`, { "location": "lib/binaries", "resolve": import.meta.url } );
+externalResources.add( `softvisio-node/sqlite/resources/node-v${process.versions.modules}-${process.platform}-${process.arch}.node` );
 
 // under windows download linux binaries for vmware
 if ( process.platform === "win32" ) {
-    externalResources.add( `softvisio-node/sqlite/resources/node-v${process.versions.modules}-linux-${process.arch}.node`, { "location": "lib/binaries", "resolve": import.meta.url } );
+    externalResources.add( `softvisio-node/sqlite/resources/node-v${process.versions.modules}-linux-${process.arch}.node` );
 }
 
 const res = await externalResources.update( {
