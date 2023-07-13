@@ -30,7 +30,7 @@ await Cli.parse( CLI );
 // find better-sqlit3 location
 const cwd = path.dirname( resolve( "better-sqlite3/package.json", import.meta.url ) );
 
-const meta = { "version": readConfig( cwd + "/package.json" ).version };
+const meta = { "better-sqlite3": "v" + readConfig( cwd + "/package.json" ).version };
 
 // install better-sqlite3 deps
 var res = childProcess.spawnSync( "npm", ["i", "--ignore-scripts"], {
@@ -113,7 +113,7 @@ async function updateSqlite () {
 
     const match = html.match( /(\d{4}\/sqlite-amalgamation-(3\d{6}).zip)/ );
 
-    meta.sqlite = match[2];
+    meta.sqlite = "v" + match[2];
 
     const sqliteUrl = "https://www.sqlite.org/" + match[1];
 
