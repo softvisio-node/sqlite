@@ -9,7 +9,7 @@ import glob from "#core/glob";
 import AdmZip from "adm-zip";
 import fs from "fs";
 import fetch from "#core/fetch";
-import ExternalResourcesBuilder from "#core/external-resources/builder";
+import ExternalResourceBuilder from "#core/external-resource-builder";
 import { readConfig } from "#core/config";
 
 const CLI = {
@@ -69,7 +69,7 @@ if ( res.status ) process.exit( res.status );
 
 const id = "softvisio-node/sqlite/resources";
 
-class ExternalResource extends ExternalResourcesBuilder {
+class ExternalResource extends ExternalResourceBuilder {
     #file;
     #name;
 
