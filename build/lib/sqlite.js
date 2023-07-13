@@ -65,14 +65,19 @@ export default class ExternalResource extends ExternalResourceBuilder {
         if ( res.status ) return result( 500 );
 
         // build for current nodejs version
-        res = childProcess.spawnSync( "npx", ["--no-install", "prebuild", "--strip", "--include-regex", "better_sqlite3.node$", "-r", "node"], {
+        // res = childProcess.spawnSync( "npx", ["--no-install", "prebuild", "--strip", "--include-regex", "better_sqlite3.node$", "-r", "node"], {
+        //     "cwd": this.#cwd,
+        //     "shell": true,
+        //     "stdio": "inherit",
+        // } );
+        res = childProcess.spawnSync( "npm", ["run", "build-release"], {
             "cwd": this.#cwd,
             "shell": true,
             "stdio": "inherit",
         } );
         if ( res.status ) return result( 500 );
 
-        const files = glob( "lib/binding/*/*.node", { "cwd": this.#cwd } );
+        const files = glob( "build/Release/better_sqlite3.node", { "cwd": this.#cwd } );
 
         if ( !files.length ) return result( 500 );
 
