@@ -36,22 +36,6 @@ export default class ExternalResource extends ExternalResourceBuilder {
     async _build ( location ) {
         var res;
 
-        // install better-sqlite3 deps
-        // res = childProcess.spawnSync( "npm", ["i", "--ignore-scripts"], {
-        //     "cwd": this.#cwd,
-        //     "shell": true,
-        //     "stdio": "inherit",
-        // } );
-        // if ( res.status ) return result( 500 );
-
-        // update node-gyp to the latest version
-        // res = childProcess.spawnSync( "npm", ["i", "--ignore-scripts", "node-gyp@latest"], {
-        //     "cwd": path.join( this.#cwd, "node_modules/prebuild" ),
-        //     "shell": true,
-        //     "stdio": "inherit",
-        // } );
-        // if ( res.status ) return result( 500 );
-
         // update sqlite sources
         res = await this.#updateSqlite();
         if ( !res.ok ) return res;
@@ -65,11 +49,6 @@ export default class ExternalResource extends ExternalResourceBuilder {
         if ( res.status ) return result( 500 );
 
         // build for current nodejs version
-        // res = childProcess.spawnSync( "npx", ["--no-install", "prebuild", "--strip", "--include-regex", "better_sqlite3.node$", "-r", "node"], {
-        //     "cwd": this.#cwd,
-        //     "shell": true,
-        //     "stdio": "inherit",
-        // } );
         res = childProcess.spawnSync( "npm", ["run", "build-release"], {
             "cwd": this.#cwd,
             "shell": true,
