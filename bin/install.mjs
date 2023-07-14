@@ -10,7 +10,6 @@ if ( process.platform === "win32" ) {
 }
 
 const res = await externalResources.update( {
-    "remote": true,
     "force": false,
     "silent": false,
 } );
