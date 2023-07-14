@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.15.20 (2023-07-14)
+
+Fixes:
+
+-   fix: update defaults
+
 ### 1.15.19 (2023-07-13)
 
 Fixes:
