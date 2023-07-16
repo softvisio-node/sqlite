@@ -1,5 +1,12 @@
 # Changelog
 
+### 1.15.23 (2023-07-16)
+
+Fixes:
+
+-   fix: deps
+-   fix: ported to esm
+
 ### 1.15.22 (2023-07-16)
 
 Fixes:
