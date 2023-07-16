@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import externalResources from "@softvisio/external-resources";
+import externalResources from "@softvisio/utils/external-resources";
 
 externalResources.add( `softvisio-node/sqlite/resources/node-v${process.versions.modules}-${process.platform}-${process.arch}.node` );
 
