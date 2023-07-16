@@ -13,6 +13,7 @@
     },
     "license": "ISC",
     "author": "zdm <zdm@softvisio.net>",
+    "type": "module",
     "exports": {
         ".": "./lib/index.js"
     },
@@ -23,7 +24,7 @@
         "/src"
     ],
     "scripts": {
-        "install": "node bin/install.mjs"
+        "install": "node bin/install.js"
     },
     "peerDependencies": {
         "@softvisio/utils": "^1.1.11"
