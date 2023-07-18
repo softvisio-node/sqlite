@@ -7,8 +7,6 @@ import AdmZip from "adm-zip";
 import fetch from "#core/fetch";
 import path from "node:path";
 
-const id = "softvisio-node/sqlite/resources";
-
 export default class ExternalResource extends ExternalResourceBuilder {
     #cwd;
     #betterSqlite3Version;
@@ -16,9 +14,7 @@ export default class ExternalResource extends ExternalResourceBuilder {
     #sqliteUrl;
 
     constructor ( cwd ) {
-        const name = `node-v${process.versions.modules}-${process.platform}-${process.arch}.node`;
-
-        super( id + "/" + name );
+        super( ["softvisio-node/sqlite/resources", { "node": true }] );
 
         this.#cwd = cwd;
 
