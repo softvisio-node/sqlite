@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.15.29 (2023-10-20)
+
+Fixes:
+
+-   fix: build node lts
+
 ### 1.15.28 (2023-09-02)
 
 Fixes:
