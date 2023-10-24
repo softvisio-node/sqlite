@@ -23,7 +23,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
         architecture: [x64]
-        node-version: [20] # [lts/*, latest]
+        node-version: [lts/*, latest]
     name: build on ${{ matrix.os }} ${{ matrix.architecture }} node ${{ matrix.node-version }}
     runs-on: ${{ matrix.os }}
     steps:
