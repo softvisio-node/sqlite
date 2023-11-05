@@ -20,6 +20,7 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     strategy:
+      max-parallel: 1
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
         architecture: [x64]
