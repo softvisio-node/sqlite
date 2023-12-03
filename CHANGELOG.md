@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.15.39 (2023-12-03)
+
+Fixes:
+
+-   fix: external resource
+
 ### 1.15.38 (2023-12-02)
 
 Fixes:
