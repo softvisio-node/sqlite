@@ -15,7 +15,7 @@ export default class ExternalResource extends ExternalResourceBuilder {
 
     constructor ( cwd ) {
         super( {
-            "id": "softvisio-node/sqlite/resources",
+            "id": "softvisio-node/sqlite",
             "node": true,
             "packageRoot": import.meta.url,
         } );

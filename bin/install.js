@@ -3,14 +3,14 @@
 import externalResources from "@softvisio/utils/external-resources";
 
 externalResources.add( {
-    "id": "softvisio-node/sqlite/resources",
+    "id": "softvisio-node/sqlite",
     "node": true,
 } );
 
 // under windows download linux binaries for vmware
 if ( process.platform === "win32" ) {
     externalResources.add( {
-        "id": "softvisio-node/sqlite/resources",
+        "id": "softvisio-node/sqlite",
         "node": true,
         "platform": "linux",
     } );
