@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.15.41 (2023-12-21)
+
+Fixes:
+
+-   fix: sqlite version hardcoded
+
 ### 1.15.40 (2023-12-21)
 
 Fixes:
