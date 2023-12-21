@@ -7,6 +7,11 @@ import AdmZip from "adm-zip";
 import fetch from "#core/fetch";
 import path from "node:path";
 
+const SQLITE_VERSION = "3.44.2",
+    SQLITE_FULL_VERSION = "3440200",
+    SQLITE_YEAR = 2023,
+    SQLITE_URL = `https://www.sqlite.org/${SQLITE_YEAR}/sqlite-amalgamation-${SQLITE_FULL_VERSION}.zip`;
+
 export default class ExternalResource extends ExternalResourceBuilder {
     #cwd;
     #betterSqlite3Version;
@@ -74,17 +79,24 @@ export default class ExternalResource extends ExternalResourceBuilder {
 
     // private
     async #getSqliteVersion () {
-        const res = await fetch( "https://www.sqlite.org/download.html" );
+        if ( SQLITE_VERSION ) {
+            this.#sqliteVersion = "v" + SQLITE_VERSION;
 
-        if ( !res.ok ) return res;
+            this.#sqliteUrl = SQLITE_URL;
+        }
+        else {
+            const res = await fetch( "https://www.sqlite.org/download.html" );
 
-        const html = await res.text();
+            if ( !res.ok ) return res;
 
-        const match = html.match( /(\d{4}\/sqlite-amalgamation-(3\d{6}).zip)/ );
+            const html = await res.text();
 
-        this.#sqliteVersion = "v" + match[2];
+            const match = html.match( /(\d{4}\/sqlite-amalgamation-(3\d{6}).zip)/ );
 
-        this.#sqliteUrl = "https://www.sqlite.org/" + match[1];
+            this.#sqliteVersion = "v" + match[2];
+
+            this.#sqliteUrl = "https://www.sqlite.org/" + match[1];
+        }
 
         return result( 200 );
     }
