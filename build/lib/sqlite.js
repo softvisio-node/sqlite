@@ -8,9 +8,11 @@ import fetch from "#core/fetch";
 import path from "node:path";
 
 const USE_LATEST_SQLITE = true,
-    SQLITE_VERSION = 3440200,
+    SQLITE_VERSION = "3.44.2",
     SQLITE_YEAR = 2023,
-    SQLITE_URL = `https://www.sqlite.org/${SQLITE_YEAR}/sqlite-amalgamation-${SQLITE_VERSION}.zip`;
+    SQLITE_URL = `https://www.sqlite.org/${SQLITE_YEAR}/sqlite-amalgamation-${SQLITE_VERSION.split( "." )
+        .map( ( label, idx ) => ( !idx ? label : label.padEnd( 2, "0" ) ) )
+        .join( "" )}00.zip`;
 
 export default class ExternalResource extends ExternalResourceBuilder {
     #cwd;
@@ -93,7 +95,13 @@ export default class ExternalResource extends ExternalResourceBuilder {
 
             const match = html.match( /(\d{4}\/sqlite-amalgamation-(3\d{6}).zip)/ );
 
-            this.#sqliteVersion = "v" + match[2];
+            this.#sqliteVersion =
+                "v" +
+                match[2]
+                    .split( /(\d)(\d\d)(\d\d)/ )
+                    .slice( 1, 4 )
+                    .map( label => +label )
+                    .join( "." );
 
             this.#sqliteUrl = "https://www.sqlite.org/" + match[1];
         }
