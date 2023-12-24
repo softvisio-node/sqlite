@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.15.44 (2023-12-24)
+
+Fixes:
+
+-   fix: sqlite version
+
 ### 1.15.43 (2023-12-24)
 
 Fixes:
