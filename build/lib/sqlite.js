@@ -11,7 +11,7 @@ const USE_LATEST_SQLITE = true,
     SQLITE_VERSION = "3.44.2",
     SQLITE_YEAR = 2023,
     SQLITE_URL = `https://www.sqlite.org/${SQLITE_YEAR}/sqlite-amalgamation-${SQLITE_VERSION.split( "." )
-        .map( ( label, idx ) => ( !idx ? label : label.padEnd( 2, "0" ) ) )
+        .map( ( label, idx ) => ( !idx ? label : label.padStart( 2, "0" ) ) )
         .join( "" )}00.zip`;
 
 export default class ExternalResource extends ExternalResourceBuilder {
