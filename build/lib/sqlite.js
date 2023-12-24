@@ -8,10 +8,9 @@ import fetch from "#core/fetch";
 import path from "node:path";
 
 const USE_LATEST_SQLITE = true,
-    SQLITE_VERSION = "3.44.2",
-    SQLITE_FULL_VERSION = "3440200",
+    SQLITE_VERSION = 3440200,
     SQLITE_YEAR = 2023,
-    SQLITE_URL = `https://www.sqlite.org/${SQLITE_YEAR}/sqlite-amalgamation-${SQLITE_FULL_VERSION}.zip`;
+    SQLITE_URL = `https://www.sqlite.org/${SQLITE_YEAR}/sqlite-amalgamation-${SQLITE_VERSION}.zip`;
 
 export default class ExternalResource extends ExternalResourceBuilder {
     #cwd;
