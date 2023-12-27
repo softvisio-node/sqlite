@@ -10,9 +10,11 @@ import path from "node:path";
 const USE_LATEST_SQLITE = true,
     SQLITE_VERSION = "3.44.2",
     SQLITE_YEAR = 2023,
-    SQLITE_URL = `https://www.sqlite.org/${SQLITE_YEAR}/sqlite-amalgamation-${SQLITE_VERSION.split( "." )
-        .map( ( label, idx ) => ( !idx ? label : label.padStart( 2, "0" ) ) )
-        .join( "" )}00.zip`;
+    SQLITE_PRODUCT_VERSION =
+        SQLITE_VERSION.split( "." )
+            .map( ( label, idx ) => ( !idx ? label : label.padStart( 2, "0" ) ) )
+            .join( "" ) + "00",
+    SQLITE_URL = `https://www.sqlite.org/${SQLITE_YEAR}/sqlite-amalgamation-${SQLITE_PRODUCT_VERSION}.zip`;
 
 export default class ExternalResource extends ExternalResourceBuilder {
     #cwd;
