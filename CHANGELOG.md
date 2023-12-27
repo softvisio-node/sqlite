@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.15.45 (2023-12-27)
+
+Fixes:
+
+-   fix: product version
+
 ### 1.15.44 (2023-12-24)
 
 Fixes:
