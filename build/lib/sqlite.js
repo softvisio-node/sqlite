@@ -50,7 +50,7 @@ export default class ExternalResource extends ExternalResourceBuilder {
         if ( !res.ok ) return res;
 
         // patch
-        res = childProcess.spawnSync( "sed", ["-i", "-e", `"/SQLITE_USE_URI=0/ s/=0/=1/"`, "deps/defines.gypi"], {
+        res = childProcess.spawnSync( "sed", [ "-i", "-e", `"/SQLITE_USE_URI=0/ s/=0/=1/"`, "deps/defines.gypi" ], {
             "cwd": this.#cwd,
             "shell": true,
             "stdio": "inherit",
@@ -58,7 +58,7 @@ export default class ExternalResource extends ExternalResourceBuilder {
         if ( res.status ) return result( 500 );
 
         // build for current nodejs version
-        res = childProcess.spawnSync( "npm", ["run", "build-release"], {
+        res = childProcess.spawnSync( "npm", [ "run", "build-release" ], {
             "cwd": this.#cwd,
             "shell": true,
             "stdio": "inherit",
@@ -112,7 +112,7 @@ export default class ExternalResource extends ExternalResourceBuilder {
     }
 
     async #updateSqlite () {
-        const res = childProcess.spawnSync( "curl", ["-fsSLo", "deps/sqlite3.zip", this.#sqliteUrl], {
+        const res = childProcess.spawnSync( "curl", [ "-fsSLo", "deps/sqlite3.zip", this.#sqliteUrl ], {
             "cwd": this.#cwd,
             "stdio": "inherit",
         } );

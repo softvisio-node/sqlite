@@ -25,6 +25,6 @@ await Cli.parse( CLI );
 // find better-sqlit3 location
 const cwd = path.dirname( resolve( "better-sqlite3/package.json", import.meta.url ) );
 
-const res = await ExternalResourceBuilder.build( [new Sqlite( cwd )], { "force": process.cli.options.force } );
+const res = await ExternalResourceBuilder.build( [ new Sqlite( cwd ) ], { "force": process.cli.options.force } );
 
 if ( !res.ok ) process.exit( 1 );
