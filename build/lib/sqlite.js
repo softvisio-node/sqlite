@@ -14,7 +14,7 @@ const USE_LATEST_SQLITE = true,
         SQLITE_VERSION.split( "." )
             .map( ( label, idx ) => ( !idx ? label : label.padStart( 2, "0" ) ) )
             .join( "" ) + "00",
-    SQLITE_URL = `https://www.sqlite.org/${SQLITE_YEAR}/sqlite-amalgamation-${SQLITE_PRODUCT_VERSION}.zip`;
+    SQLITE_URL = `https://www.sqlite.org/${ SQLITE_YEAR }/sqlite-amalgamation-${ SQLITE_PRODUCT_VERSION }.zip`;
 
 export default class ExternalResource extends ExternalResourceBuilder {
     #cwd;
@@ -69,7 +69,7 @@ export default class ExternalResource extends ExternalResourceBuilder {
 
         if ( !files.length ) return result( 500 );
 
-        fs.copyFileSync( this.#cwd + "/" + files[0], location + "/sqlite.node" );
+        fs.copyFileSync( this.#cwd + "/" + files[ 0 ], location + "/sqlite.node" );
 
         return result( 200 );
     }
@@ -99,13 +99,13 @@ export default class ExternalResource extends ExternalResourceBuilder {
 
             this.#sqliteVersion =
                 "v" +
-                match[2]
+                match[ 2 ]
                     .split( /(\d)(\d\d)(\d\d)/ )
                     .slice( 1, 4 )
                     .map( label => +label )
                     .join( "." );
 
-            this.#sqliteUrl = "https://www.sqlite.org/" + match[1];
+            this.#sqliteUrl = "https://www.sqlite.org/" + match[ 1 ];
         }
 
         return result( 200 );
