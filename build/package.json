@@ -24,6 +24,6 @@
     "dependencies": {
         "@softvisio/core": "latest",
         "adm-zip": "^0.5.9",
-        "better-sqlite3": "9.4.1"
+        "better-sqlite3": "9.4.2"
     }
 }
