@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.15.54 (2024-02-22)
+
+Fixes:
+
+-   fix: better-sqlite v9.4.3
+
 ### 1.15.53 (2024-02-21)
 
 Fixes:
