@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.15.57 (2024-03-20)
+
+Fixes:
+
+-   fix: commonjs
+
 ### 1.15.56 (2024-03-20)
 
 Fixes:
