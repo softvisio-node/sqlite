@@ -13,12 +13,12 @@
     },
     "license": "ISC",
     "author": "zdm <zdm@softvisio.net>",
-    "type": "module",
+    "type": "commonjs",
     "imports": {
         "#lib/*": "./lib/*.js"
     },
     "exports": {
-        ".": "./lib/index.js"
+        ".": "./lib/index.mjs"
     },
     "files": [
         "/bin",
