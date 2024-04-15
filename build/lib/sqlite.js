@@ -8,8 +8,8 @@ import fetch from "#core/fetch";
 import path from "node:path";
 
 const USE_LATEST_SQLITE = true,
-    SQLITE_VERSION = "3.45.2",
-    SQLITE_YEAR = 2023,
+    SQLITE_VERSION = "3.45.3",
+    SQLITE_YEAR = 2024,
     SQLITE_PRODUCT_VERSION =
         SQLITE_VERSION.split( "." )
             .map( ( label, idx ) => ( !idx ? label : label.padStart( 2, "0" ) ) )
