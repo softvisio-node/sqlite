@@ -1,5 +1,12 @@
 # Changelog
 
+### 1.15.62 (2024-04-15)
+
+Fixes:
+
+-   fix: docs
+-   fix: sqlite 3.45.3
+
 ### 1.15.61 (2024-04-10)
 
 Fixes:
