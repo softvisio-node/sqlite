@@ -34,7 +34,7 @@ export default class ExternalResource extends ExternalResourceBuilder {
         this.#betterSqlite3Version = "v" + readConfig( this.#cwd + "/package.json" ).version;
     }
 
-    async _getEtag () {
+    async _getEtag ( { etag, buildDate, meta } ) {
         const res = await this.#getSqliteVersion();
 
         if ( !res.ok ) return res;
