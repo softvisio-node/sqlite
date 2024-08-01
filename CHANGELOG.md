@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.15.71 (2024-08-01)
+
+Fixes:
+
+-   fix: package engines removed
+
 ### 1.15.70 (2024-07-02)
 
 Fixes:
