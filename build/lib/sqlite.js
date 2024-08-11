@@ -1,6 +1,6 @@
 import ExternalResourceBuilder from "#core/external-resource-builder";
 import { readConfig } from "#core/config";
-import fs from "fs";
+import fs from "node:fs";
 import glob from "#core/glob";
 import childProcess from "node:child_process";
 import AdmZip from "adm-zip";

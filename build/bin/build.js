@@ -3,7 +3,7 @@
 import "#core/stream";
 import Cli from "#core/cli";
 import { resolve } from "#core/utils";
-import path from "path";
+import path from "node:path";
 import ExternalResourceBuilder from "#core/external-resource-builder";
 import Sqlite from "#lib/sqlite";
 
