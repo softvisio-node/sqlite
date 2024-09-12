@@ -12,7 +12,9 @@ const USE_LATEST_SQLITE = true,
     SQLITE_YEAR = 2024,
     SQLITE_PRODUCT_VERSION =
         SQLITE_VERSION.split( "." )
-            .map( ( label, idx ) => ( !idx ? label : label.padStart( 2, "0" ) ) )
+            .map( ( label, idx ) => ( !idx
+                ? label
+                : label.padStart( 2, "0" ) ) )
             .join( "" ) + "00",
     SQLITE_URL = `https://www.sqlite.org/${ SQLITE_YEAR }/sqlite-amalgamation-${ SQLITE_PRODUCT_VERSION }.zip`;
 
