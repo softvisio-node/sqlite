@@ -3,7 +3,7 @@ import { readConfig } from "#core/config";
 import fs from "node:fs";
 import glob from "#core/glob";
 import childProcess from "node:child_process";
-import AdmZip from "adm-zip";
+import Zip from "#core/zip";
 import fetch from "#core/fetch";
 import path from "node:path";
 
@@ -121,7 +121,7 @@ export default class ExternalResource extends ExternalResourceBuilder {
 
         if ( res.status ) return res;
 
-        const zip = new AdmZip( path.join( this.#cwd, "deps/sqlite3.zip" ) );
+        const zip = new Zip( path.join( this.#cwd, "deps/sqlite3.zip" ) );
 
         for ( const entry of zip.getEntries() ) {
             if ( !entry.name ) continue;
