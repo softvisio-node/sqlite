@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.15.83 (2024-10-04)
+
+Fixes:
+
+-   fix: zip
+
 ### 1.15.82 (2024-09-13)
 
 No notable changes since the previous release.
