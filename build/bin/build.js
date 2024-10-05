@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 import "#core/stream";
-import Cli from "#core/cli";
-import { resolve } from "#core/utils";
 import path from "node:path";
+import Cli from "#core/cli";
 import ExternalResourceBuilder from "#core/external-resource-builder";
+import { resolve } from "#core/utils";
 import Sqlite from "#lib/sqlite";
 
 const CLI = {

@@ -1,11 +1,11 @@
-import ExternalResourceBuilder from "#core/external-resource-builder";
-import { readConfig } from "#core/config";
-import fs from "node:fs";
-import glob from "#core/glob";
 import childProcess from "node:child_process";
-import Zip from "#core/zip";
-import fetch from "#core/fetch";
+import fs from "node:fs";
 import path from "node:path";
+import { readConfig } from "#core/config";
+import ExternalResourceBuilder from "#core/external-resource-builder";
+import fetch from "#core/fetch";
+import glob from "#core/glob";
+import Zip from "#core/zip";
 
 const USE_LATEST_SQLITE = true,
     SQLITE_VERSION = "3.45.3",
