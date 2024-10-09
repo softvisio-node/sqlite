@@ -1,5 +1,12 @@
 # Changelog
 
+### 1.15.84 (2024-10-09)
+
+Fixes:
+
+-   fix: dependabot
+-   fix: install script
+
 ### 1.15.83 (2024-10-04)
 
 Fixes:
