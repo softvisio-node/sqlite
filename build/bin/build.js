@@ -8,10 +8,10 @@ import { resolve } from "#core/utils";
 import Sqlite from "#lib/sqlite";
 
 const CLI = {
-    "title": "Update resources",
+    "title": "Build resources",
     "options": {
         "force": {
-            "description": "Force build",
+            "description": "force build",
             "default": false,
             "schema": {
                 "type": "boolean",
