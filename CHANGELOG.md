@@ -1,5 +1,13 @@
 # Changelog
 
+### 1.15.87 (2024-10-11)
+
+Fixes:
+
+-   fix: sqlite download url
+
+[Full list of the changes](https://github.com/softvisio-node/sqlite/compare/v1.15.86...v1.15.87)
+
 ### 1.15.86 (2024-10-11)
 
 Fixes:
