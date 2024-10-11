@@ -16,7 +16,7 @@ const USE_LATEST_SQLITE = true,
                 ? label
                 : label.padStart( 2, "0" ) ) )
             .join( "" ) + "00",
-    SQLITE_URL = `https://www.sqlite.org/${ SQLITE_YEAR }/sqlite-amalgamation-${ SQLITE_PRODUCT_VERSION }.zip`;
+    SQLITE_URL = `https://www3.sqlite.org/${ SQLITE_YEAR }/sqlite-amalgamation-${ SQLITE_PRODUCT_VERSION }.zip`;
 
 export default class ExternalResource extends ExternalResourceBuilder {
     #cwd;
@@ -91,7 +91,7 @@ export default class ExternalResource extends ExternalResourceBuilder {
             this.#sqliteUrl = SQLITE_URL;
         }
         else {
-            const res = await fetch( "https://www.sqlite.org/download.html" );
+            const res = await fetch( "https://www3.sqlite.org/download.html" );
 
             if ( !res.ok ) return res;
 
@@ -107,7 +107,7 @@ export default class ExternalResource extends ExternalResourceBuilder {
                     .map( label => +label )
                     .join( "." );
 
-            this.#sqliteUrl = "https://www.sqlite.org/" + match[ 1 ];
+            this.#sqliteUrl = "https://www3.sqlite.org/" + match[ 1 ];
         }
 
         return result( 200 );
