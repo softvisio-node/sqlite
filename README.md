@@ -1,6 +1,6 @@
 <!-- !!! DO NOT EDIT, THIS FILE IS GENERATED AUTOMATICALLY !!!  -->
 
-> :information_source: Please, see the full project documentation here: [https://softvisio-node.github.io/sqlite/](https://softvisio-node.github.io/sqlite/).
+> :information_source: Please, see the full project documentation here:<br>[https://softvisio-node.github.io/sqlite/](https://softvisio-node.github.io/sqlite/)
 
 # Introduction
 
@@ -12,5 +12,5 @@ Repacked version of [better-sqlite3](https://github.com/JoshuaWise/better-sqlite
 ## Install
 
 ```shell
-npm i @softvisio/sqlite
+npm install @softvisio/sqlite
 ```

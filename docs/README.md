@@ -8,5 +8,5 @@ Repacked version of [better-sqlite3](https://github.com/JoshuaWise/better-sqlite
 ## Install
 
 ```shell
-npm i @softvisio/sqlite
+npm install @softvisio/sqlite
 ```
