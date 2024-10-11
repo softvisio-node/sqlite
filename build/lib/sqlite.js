@@ -8,7 +8,8 @@ import glob from "#core/glob";
 import Zip from "#core/zip";
 
 const USE_LATEST_SQLITE = true,
-    SQLITE_VERSION = "3.45.3",
+    SQLITE_DOMAIN = "www3.sqlite.org",
+    SQLITE_VERSION = "3.46.1",
     SQLITE_YEAR = 2024,
     SQLITE_PRODUCT_VERSION =
         SQLITE_VERSION.split( "." )
@@ -16,7 +17,7 @@ const USE_LATEST_SQLITE = true,
                 ? label
                 : label.padStart( 2, "0" ) ) )
             .join( "" ) + "00",
-    SQLITE_URL = `https://www3.sqlite.org/${ SQLITE_YEAR }/sqlite-amalgamation-${ SQLITE_PRODUCT_VERSION }.zip`;
+    SQLITE_URL = `https://${ SQLITE_DOMAIN }/${ SQLITE_YEAR }/sqlite-amalgamation-${ SQLITE_PRODUCT_VERSION }.zip`;
 
 export default class ExternalResource extends ExternalResourceBuilder {
     #cwd;
@@ -91,7 +92,7 @@ export default class ExternalResource extends ExternalResourceBuilder {
             this.#sqliteUrl = SQLITE_URL;
         }
         else {
-            const res = await fetch( "https://www3.sqlite.org/download.html" );
+            const res = await fetch( `https://${ SQLITE_DOMAIN }/download.html` );
 
             if ( !res.ok ) return res;
 
@@ -107,7 +108,7 @@ export default class ExternalResource extends ExternalResourceBuilder {
                     .map( label => +label )
                     .join( "." );
 
-            this.#sqliteUrl = "https://www3.sqlite.org/" + match[ 1 ];
+            this.#sqliteUrl = `https://${ SQLITE_DOMAIN }/` + match[ 1 ];
         }
 
         return result( 200 );
