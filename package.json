@@ -27,7 +27,8 @@
         "/src"
     ],
     "scripts": {
-        "install": "node bin/install.mjs"
+        "install": "node bin/install.mjs",
+        "release": "softvisio-cli package release"
     },
     "peerDependencies": {
         "@softvisio/utils": "^1.1.11"
