@@ -19,7 +19,8 @@
         "#lib/*": "./lib/*.js"
     },
     "scripts": {
-        "build": "node bin/build.js"
+        "build": "node bin/build.js",
+        "publish": "softvisio-cli package publish"
     },
     "dependencies": {
         "@softvisio/core": "^7.83.13",
