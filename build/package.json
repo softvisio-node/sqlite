@@ -1,4 +1,5 @@
 {
+    "name": "@softvisio/sqlite/build",
     "version": "1.15.87",
     "private": true,
     "homepage": "https://github.com/softvisio-node/sqlite",
