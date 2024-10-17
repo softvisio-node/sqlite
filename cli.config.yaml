@@ -1,5 +1,5 @@
 subPackages:
-  - build
+  - /build
 
 docs:
   location: /docs
