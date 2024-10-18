@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.16.2 (2024-10-18)
+
+No notable changes since the previous release.
+
+[Full list of the changes](https://github.com/softvisio-node/sqlite/compare/v1.16.1...v1.16.2)
+
 ### 1.16.1 (2024-10-18)
 
 No notable changes since the previous release.
