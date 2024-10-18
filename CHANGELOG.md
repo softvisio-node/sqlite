@@ -1,5 +1,13 @@
 # Changelog
 
+### 1.16.0 (2024-10-18)
+
+Features:
+
+-   feat: update better-sqlite v11.4.0
+
+[Full list of the changes](https://github.com/softvisio-node/sqlite/compare/v1.15.89...v1.16.0)
+
 ### 1.15.89 (2024-10-16)
 
 No notable changes since the previous release.
