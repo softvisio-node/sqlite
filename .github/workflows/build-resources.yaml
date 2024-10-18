@@ -16,9 +16,9 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
+        node-version: [lts/*, latest]
         os: [ubuntu-latest, windows-latest, macos-latest]
         architecture: [x64]
-        node-version: [lts/*, latest]
     name: build on ${{ matrix.os }} ${{ matrix.architecture }} node ${{ matrix.node-version }}
     runs-on: ${{ matrix.os }}
     steps:
