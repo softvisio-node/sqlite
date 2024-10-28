@@ -1,6 +1,6 @@
 <!-- !!! DO NOT EDIT, THIS FILE IS GENERATED AUTOMATICALLY !!!  -->
 
-> :information_source: Please, see the full project documentation here:<br>[https://softvisio-node.github.io/sqlite/](https://softvisio-node.github.io/sqlite/)
+> :information_source: Please, see the full project documentation here:<br><https://softvisio-node.github.io/sqlite/>
 
 # Introduction
 
