@@ -16,7 +16,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        node-version: [lts/*, latest]
+        node-version: [lts/*, latest, 22]
         os: [ubuntu-latest, windows-latest, macos-latest]
         architecture: [x64]
     name: build on ${{ matrix.os }} ${{ matrix.architecture }} node ${{ matrix.node-version }}
