@@ -1,5 +1,13 @@
 # Changelog
 
+### 1.17.5 (2024-11-04)
+
+Other changes:
+
+-   chore: update node versions
+
+[Compare with the previous release: v1.17.4 ... v1.17.5](https://github.com/softvisio-node/sqlite/compare/v1.17.4...v1.17.5)
+
 ### 1.17.4 (2024-10-30)
 
 Other changes:
