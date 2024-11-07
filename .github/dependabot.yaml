@@ -5,11 +5,11 @@ updates:
       - /
     schedule:
       interval: daily
-    open-pull-requests-limit: 0
+    open-pull-requests-limit: 5
   - package-ecosystem: npm
     directories:
       - /
       - /build
     schedule:
       interval: daily
-    open-pull-requests-limit: 0
+    open-pull-requests-limit: 5
