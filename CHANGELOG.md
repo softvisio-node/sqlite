@@ -1,5 +1,13 @@
 # Changelog
 
+### 1.17.7 (2024-11-07)
+
+Other changes:
+
+-   chore: set parallel build
+
+[Compare with the previous release: v1.17.6 ... v1.17.7](https://github.com/softvisio-node/sqlite/compare/v1.17.6...v1.17.7)
+
 ### 1.17.6 (2024-11-07)
 
 Other changes:
