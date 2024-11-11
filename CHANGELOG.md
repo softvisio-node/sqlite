@@ -1,5 +1,13 @@
 # Changelog
 
+### 1.17.9 (2024-11-11)
+
+Other changes:
+
+-   chore: refactor external resource builder
+
+[Compare with the previous release: v1.17.8 ... v1.17.9](https://github.com/softvisio-node/sqlite/compare/v1.17.8...v1.17.9)
+
 ### 1.17.8 (2024-11-10)
 
 Other changes:
