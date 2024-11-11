@@ -37,7 +37,8 @@ export default class ExternalResource extends ExternalResourceBuilder {
         this.#betterSqlite3Version = "v" + readConfig( this.#cwd + "/package.json" ).version;
     }
 
-    async _getEtag ( { etag, buildDate, meta } ) {
+    // protected
+    async _getEtag () {
         const res = await this.#getSqliteVersion();
 
         if ( !res.ok ) return res;
@@ -78,10 +79,10 @@ export default class ExternalResource extends ExternalResourceBuilder {
     }
 
     async _getMeta () {
-        return {
+        return result( 200, {
             "better-sqlite3": this.#betterSqlite3Version,
             "sqlite": this.#sqliteVersion,
-        };
+        } );
     }
 
     // private
