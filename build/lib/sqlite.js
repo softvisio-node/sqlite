@@ -95,7 +95,7 @@ export default class ExternalResource extends ExternalResourceBuilder {
         else {
             const res = await fetch( `https://${ SQLITE_DOMAIN }/download.html` );
 
-            if ( !res.ok ) return res;
+            if ( !res.ok ) return result( [ res.status, "Get version error: " + res.statusTexsd ] );
 
             const html = await res.text();
 
@@ -116,12 +116,19 @@ export default class ExternalResource extends ExternalResourceBuilder {
     }
 
     async #updateSqlite () {
-        const res = childProcess.spawnSync( "curl", [ "-fsSLo", "deps/sqlite3.zip", this.#sqliteUrl ], {
-            "cwd": this.#cwd,
-            "stdio": "inherit",
+        var res;
+
+        res = await fetch( this.#sqliteUrl );
+
+        if ( !res.ok ) return result( [ res.status, "Download error: " + res.statusTexsd ] );
+
+        const location = this.#cwd + "/deps";
+
+        fs.mkdirSync( location, {
+            "recursive": true,
         } );
 
-        if ( res.status ) return res;
+        fs.writeFileSync( location + "/sqlite3.zip", await res.buffer() );
 
         const zip = new Zip( path.join( this.#cwd, "deps/sqlite3.zip" ) );
 
