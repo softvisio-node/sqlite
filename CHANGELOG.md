@@ -1,5 +1,13 @@
 # Changelog
 
+### 1.18.1 (2024-11-26)
+
+Fixes:
+
+- fix: fix builder
+
+[Compare with the previous release: v1.18.0 ... v1.18.1](https://github.com/softvisio-node/sqlite/compare/v1.18.0...v1.18.1)
+
 ### 1.18.0 (2024-11-26)
 
 Features:
