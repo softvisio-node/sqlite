@@ -1,5 +1,13 @@
 # Changelog
 
+### 1.18.4 (2024-11-27)
+
+Other changes:
+
+- chore: remove max-parallel
+
+[Compare with the previous release: v1.18.3 ... v1.18.4](https://github.com/softvisio-node/sqlite/compare/v1.18.3...v1.18.4)
+
 ### 1.18.3 (2024-11-27)
 
 Other changes:
