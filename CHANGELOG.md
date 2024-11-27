@@ -1,5 +1,13 @@
 # Changelog
 
+### 1.18.3 (2024-11-27)
+
+Other changes:
+
+- chore: update package metadata
+
+[Compare with the previous release: v1.18.2 ... v1.18.3](https://github.com/softvisio-node/sqlite/compare/v1.18.2...v1.18.3)
+
 ### 1.18.2 (2024-11-27)
 
 Other changes:
