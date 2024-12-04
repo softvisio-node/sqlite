@@ -1,5 +1,13 @@
 # Changelog
 
+### 1.18.6 (2024-12-04)
+
+Other changes:
+
+- chore: update external resources path
+
+[Compare with the previous release: v1.18.5 ... v1.18.6](https://github.com/softvisio-node/sqlite/compare/v1.18.5...v1.18.6)
+
 ### 1.18.5 (2024-12-04)
 
 Other changes:
