@@ -30,6 +30,6 @@
         "install": "node bin/install.mjs"
     },
     "peerDependencies": {
-        "@softvisio/utils": "^1.1.11"
+        "@softvisio/utils": "^2.0.0"
     }
 }
