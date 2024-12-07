@@ -1,21 +1,21 @@
 version: 2
 updates:
-  - package-ecosystem: github-actions
-    directories:
-      - /
-    schedule:
-      interval: daily
-      day: monday
-      time: "00:00"
-      timezone: UTC
-    open-pull-requests-limit: 5
-  - package-ecosystem: npm
-    directories:
-      - /
-      - /build
-    schedule:
-      interval: weekly
-      day: monday
-      time: "00:00"
-      timezone: UTC
-    open-pull-requests-limit: 5
+    - package-ecosystem: github-actions
+      directories:
+          - /
+      schedule:
+          interval: daily
+          day: monday
+          time: "00:00"
+          timezone: UTC
+      open-pull-requests-limit: 5
+    - package-ecosystem: npm
+      directories:
+          - /
+          - /build
+      schedule:
+          interval: weekly
+          day: monday
+          time: "00:00"
+          timezone: UTC
+      open-pull-requests-limit: 5

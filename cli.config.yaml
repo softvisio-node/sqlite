@@ -1,9 +1,9 @@
 subPackages:
-  - /build
+    - /build
 
 docs:
-  location: /docs
+    location: /docs
 
-  externalTypes:
-    - softvisio-node/core
-    - softvisio-node/result
+    externalTypes:
+        - softvisio-node/core
+        - softvisio-node/result

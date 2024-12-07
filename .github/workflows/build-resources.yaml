@@ -1,33 +1,33 @@
 name: build-resources
 
 on:
-  workflow_dispatch:
-  release:
-    types:
-      - released
+    workflow_dispatch:
+    release:
+        types:
+            - released
 
 jobs:
-  build:
-    defaults:
-      run:
-        shell: bash
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    strategy:
-      matrix:
-        node-version: [lts/*, latest]
-        os: [ubuntu-latest, windows-latest, macos-latest]
-        architecture: [x64]
-    name: build on ${{ matrix.os }} ${{ matrix.architecture }} node ${{ matrix.node-version }}
-    runs-on: ${{ matrix.os }}
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node-version }}
-          architecture: ${{ matrix.architecture }}
-          check-latest: true
-      - run: |
-          cd build
-          npm install --ignore-scripts
-          npm run build
+    build:
+        defaults:
+            run:
+                shell: bash
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        strategy:
+            matrix:
+                node-version: [lts/*, latest]
+                os: [ubuntu-latest, windows-latest, macos-latest]
+                architecture: [x64]
+        name: build on ${{ matrix.os }} ${{ matrix.architecture }} node ${{ matrix.node-version }}
+        runs-on: ${{ matrix.os }}
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  architecture: ${{ matrix.architecture }}
+                  check-latest: true
+            - run: |
+                  cd build
+                  npm install --ignore-scripts
+                  npm run build
