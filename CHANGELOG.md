@@ -1,5 +1,13 @@
 # Changelog
 
+### 1.18.7 (2024-12-07)
+
+Other changes:
+
+- chore: set yaml indent to 4 spaces
+
+[Compare with the previous release: v1.18.6 ... v1.18.7](https://github.com/softvisio-node/sqlite/compare/v1.18.6...v1.18.7)
+
 ### 1.18.6 (2024-12-04)
 
 Other changes:
