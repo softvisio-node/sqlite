@@ -1,5 +1,13 @@
 # Changelog
 
+### 1.19.1 (2024-12-30)
+
+Other changes:
+
+- chore: add external resource autoUpdate option
+
+[Compare with the previous release: v1.19.0 ... v1.19.1](https://github.com/softvisio-node/sqlite/compare/v1.19.0...v1.19.1)
+
 ### 1.19.0 (2024-12-08)
 
 Features:
