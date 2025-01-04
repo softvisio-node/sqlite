@@ -4,7 +4,7 @@ import path from "node:path";
 import { readConfig } from "#core/config";
 import ExternalResourceBuilder from "#core/external-resource-builder";
 import fetch from "#core/fetch";
-import { globSync } from "#core/glob";
+import { glob } from "#core/glob";
 import Zip from "#core/zip";
 
 const USE_LATEST_SQLITE = true,
@@ -69,7 +69,7 @@ export default class ExternalResource extends ExternalResourceBuilder {
         } );
         if ( res.status ) return result( 500 );
 
-        const files = globSync( "build/Release/better_sqlite3.node", { "cwd": this.#cwd } );
+        const files = await glob( "build/Release/better_sqlite3.node", { "cwd": this.#cwd } );
 
         if ( !files.length ) return result( 500 );
 
