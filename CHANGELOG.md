@@ -1,5 +1,13 @@
 # Changelog
 
+### 1.20.1 (2025-01-04)
+
+Other changes:
+
+- chore: use async glob
+
+[Compare with the previous release: v1.20.0 ... v1.20.1](https://github.com/softvisio-node/sqlite/compare/v1.20.0...v1.20.1)
+
 ### 1.20.0 (2025-01-03)
 
 Features:
