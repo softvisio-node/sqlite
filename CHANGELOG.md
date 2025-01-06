@@ -1,5 +1,13 @@
 # Changelog
 
+### 1.20.3 (2025-01-06)
+
+Other changes:
+
+- chore: add external resource location option
+
+[Compare with the previous release: v1.20.2 ... v1.20.3](https://github.com/softvisio-node/sqlite/compare/v1.20.2...v1.20.3)
+
 ### 1.20.2 (2025-01-06)
 
 Fixes:
