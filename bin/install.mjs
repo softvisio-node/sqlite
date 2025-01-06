@@ -4,6 +4,7 @@ import externalResources from "@softvisio/utils/external-resources";
 
 externalResources.add( {
     "id": "softvisio-node/sqlite",
+    "location": "package",
     "node": true,
 } );
 
