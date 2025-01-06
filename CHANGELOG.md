@@ -1,5 +1,13 @@
 # Changelog
 
+### 1.20.2 (2025-01-06)
+
+Fixes:
+
+- fix: better-sqlite v11.7.2
+
+[Compare with the previous release: v1.20.1 ... v1.20.2](https://github.com/softvisio-node/sqlite/compare/v1.20.1...v1.20.2)
+
 ### 1.20.1 (2025-01-04)
 
 Other changes:
