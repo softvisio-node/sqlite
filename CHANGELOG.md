@@ -1,5 +1,14 @@
 # Changelog
 
+### 1.20.6 (2025-01-08)
+
+Other changes:
+
+- chore: fix external resource id
+- chore: fix resource id
+
+[Compare with the previous release: v1.20.5 ... v1.20.6](https://github.com/softvisio-node/sqlite/compare/v1.20.5...v1.20.6)
+
 ### 1.20.5 (2025-01-06)
 
 Other changes:
