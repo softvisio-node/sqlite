@@ -1,6 +1,6 @@
 {
     "name": "@softvisio/sqlite-build",
-    "version": "1.21.0",
+    "version": "1.22.0",
     "private": true,
     "homepage": "https://github.com/softvisio-node/sqlite",
     "bugs": {
