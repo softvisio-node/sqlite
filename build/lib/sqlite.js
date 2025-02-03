@@ -1,7 +1,7 @@
 import childProcess from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
-import { readConfig } from "#core/config";
+import { readConfigSync } from "#core/config";
 import ExternalResourceBuilder from "#core/external-resource-builder";
 import fetch from "#core/fetch";
 import { glob } from "#core/glob";
@@ -34,7 +34,7 @@ export default class ExternalResource extends ExternalResourceBuilder {
 
         this.#cwd = cwd;
 
-        this.#betterSqlite3Version = "v" + readConfig( this.#cwd + "/package.json" ).version;
+        this.#betterSqlite3Version = "v" + readConfigSync( this.#cwd + "/package.json" ).version;
     }
 
     // protected
