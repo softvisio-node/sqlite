@@ -1,5 +1,13 @@
 # Changelog
 
+### 1.23.0 (2025-02-03)
+
+Features:
+
+- feat: refactor read / write config
+
+Compare with the previous release: [`v1.22.1...v1.23.0`](https://github.com/softvisio-node/sqlite/compare/v1.22.1...v1.23.0)
+
 ### 1.22.1 (2025-01-18)
 
 Fixes:
