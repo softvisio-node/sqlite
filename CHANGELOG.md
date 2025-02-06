@@ -1,5 +1,13 @@
 # Changelog
 
+### 1.24.0 (2025-02-06)
+
+Features:
+
+- feat: sqlite 3.49.0
+
+Compare with the previous release: [`v1.23.0...v1.24.0`](https://github.com/softvisio-node/sqlite/compare/v1.23.0...v1.24.0)
+
 ### 1.23.0 (2025-02-03)
 
 Features:
