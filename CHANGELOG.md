@@ -1,5 +1,13 @@
 # Changelog
 
+### 1.24.1 (2025-02-18)
+
+Fixes:
+
+- fix: update sqlute v3.49.1
+
+Compare with the previous release: [`v1.24.0...v1.24.1`](https://github.com/softvisio-node/sqlite/compare/v1.24.0...v1.24.1)
+
 ### 1.24.0 (2025-02-06)
 
 Features:
