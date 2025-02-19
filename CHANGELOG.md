@@ -1,5 +1,13 @@
 # Changelog
 
+### 1.24.2 (2025-02-19)
+
+Other changes:
+
+- chore: update cli config
+
+Compare with the previous release: [`v1.24.1...v1.24.2`](https://github.com/softvisio-node/sqlite/compare/v1.24.1...v1.24.2)
+
 ### 1.24.1 (2025-02-18)
 
 Fixes:
