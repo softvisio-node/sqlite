@@ -1,5 +1,13 @@
 # Changelog
 
+### 1.24.3 (2025-02-26)
+
+Other changes:
+
+- chore: update editorconfig
+
+Compare with the previous release: [`v1.24.2...v1.24.3`](https://github.com/softvisio-node/sqlite/compare/v1.24.2...v1.24.3)
+
 ### 1.24.2 (2025-02-19)
 
 Other changes:
