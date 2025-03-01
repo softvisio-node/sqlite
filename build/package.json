@@ -2,7 +2,7 @@
     "name": "@softvisio/sqlite-build",
     "version": "1.24.4",
     "private": true,
-    "homepage": "https://github.com/softvisio-node/sqlite",
+    "homepage": "https://softvisio-node.github.io/sqlite/",
     "bugs": {
         "url": "https://github.com/softvisio-node/sqlite/issues",
         "email": "root <root@softvisio.net>"
