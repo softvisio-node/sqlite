@@ -1,5 +1,13 @@
 # Changelog
 
+### 1.26.1 (2025-03-26)
+
+Other changes:
+
+- chore: update markdown code tags
+
+Compare with the previous release: [`v1.26.0...v1.26.1`](https://github.com/softvisio-node/sqlite/compare/v1.26.0...v1.26.1)
+
 ### 1.26.0 (2025-03-18)
 
 Features:
