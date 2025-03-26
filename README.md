@@ -11,6 +11,6 @@ Repacked version of [better-sqlite3](https://github.com/JoshuaWise/better-sqlite
 
 ## Install
 
-```shell
+```sh
 npm install @softvisio/sqlite
 ```
