@@ -1,5 +1,17 @@
 # Changelog
 
+### 1.27.0 (2025-05-08)
+
+Features:
+
+- feat: update bettersqlte v11.10.0
+
+Other changes:
+
+- chore: update package dependencies
+
+Compare with the previous release: [`v1.26.2...v1.27.0`](https://github.com/softvisio-node/sqlite/compare/v1.26.2...v1.27.0)
+
 ### 1.26.2 (2025-05-07)
 
 Fixes:
