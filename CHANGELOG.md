@@ -1,5 +1,13 @@
 # Changelog
 
+### v1.28.0 (2025-06-01)
+
+**Features:**
+
+- \[MINOR] feat: update sqlite version (👬 zdm)
+
+Compare with the previous release: [v1.27.1](https://github.com/softvisio-node/sqlite/compare/v1.27.1...v1.28.0)
+
 ### v1.27.1 (2025-06-01)
 
 **Other changes:**
