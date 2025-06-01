@@ -1,5 +1,13 @@
 # Changelog
 
+### v1.27.1 (2025-06-01)
+
+**Other changes:**
+
+- \[PATCH] chore: update docs (👬 zdm)
+
+Compare with the previous release: [v1.27.0](https://github.com/softvisio-node/sqlite/compare/v1.27.0...v1.27.1)
+
 ### 1.27.0 (2025-05-08)
 
 Features:
