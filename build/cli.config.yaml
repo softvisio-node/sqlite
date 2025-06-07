@@ -1,1 +1,2 @@
-releasable: false
+release:
+  enabled: false
