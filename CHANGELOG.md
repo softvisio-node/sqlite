@@ -1,5 +1,13 @@
 # Changelog
 
+### v1.28.2 (2025-06-07)
+
+**Other changes:**
+
+- \[PATCH] chore: update cli config (👬 zdm)
+
+Compare with the previous release: [v1.28.1](https://github.com/softvisio-node/sqlite/compare/v1.28.1...v1.28.2)
+
 ### v1.28.1 (2025-06-06)
 
 **Other changes:**
