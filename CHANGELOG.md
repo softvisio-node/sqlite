@@ -1,5 +1,13 @@
 # Changelog
 
+### v1.28.3 (2025-06-21)
+
+**Other changes:**
+
+- build(deps): update better-sqlite3 v12.0.0 (● [4ddfed5](https://github.com/softvisio-node/sqlite/commit/4ddfed5); 👬 zdm)
+
+Compare with the previous release: [v1.28.2](https://github.com/softvisio-node/sqlite/compare/v1.28.2...v1.28.3)
+
 ### v1.28.2 (2025-06-07)
 
 **Other changes:**
