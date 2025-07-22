@@ -1,5 +1,13 @@
 # Changelog
 
+### v1.28.10 (2025-07-22)
+
+**Bug fixes:**
+
+- \[PATCH] fix: fix editorconfig (● [7b0157a](https://github.com/softvisio-node/sqlite/commit/7b0157a); 👬 zdm)
+
+Compare with the previous release: [v1.28.9](https://github.com/softvisio-node/sqlite/compare/v1.28.9...v1.28.10)
+
 ### v1.28.9 (2025-07-18)
 
 **Other changes:**
