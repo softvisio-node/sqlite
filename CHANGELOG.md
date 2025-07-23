@@ -1,5 +1,13 @@
 # Changelog
 
+### v1.28.12 (2025-07-23)
+
+**Other changes:**
+
+- style: update .npmrc (● [8a1c59f](https://github.com/softvisio-node/sqlite/commit/8a1c59f); 👬 zdm)
+
+Compare with the previous release: [v1.28.11](https://github.com/softvisio-node/sqlite/compare/v1.28.11...v1.28.12)
+
 ### v1.28.11 (2025-07-23)
 
 **Bug fixes:**
