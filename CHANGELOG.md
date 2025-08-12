@@ -1,5 +1,13 @@
 # Changelog
 
+### v1.28.14 (2025-08-12)
+
+**Other changes:**
+
+- build(deps): bunp actions/checkout\@v5 (● [a47ea25](https://github.com/softvisio-node/sqlite/commit/a47ea25); 👬 zdm)
+
+Compare with the previous release: [v1.28.13](https://github.com/softvisio-node/sqlite/compare/v1.28.13...v1.28.14)
+
 ### v1.28.13 (2025-08-02)
 
 **Other changes:**
