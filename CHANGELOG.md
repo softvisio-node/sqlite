@@ -1,5 +1,13 @@
 # Changelog
 
+### v1.28.16 (2025-09-23)
+
+**Other changes:**
+
+- build(deps): bump better-sqlite v12.4.1 (● [0b6f238](https://github.com/softvisio-node/sqlite/commit/0b6f238); 👬 zdm)
+
+Compare with the previous release: [v1.28.15](https://github.com/softvisio-node/sqlite/compare/v1.28.15...v1.28.16)
+
 ### v1.28.15 (2025-09-05)
 
 **Other changes:**
