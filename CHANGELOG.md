@@ -1,5 +1,13 @@
 # Changelog
 
+### v1.28.17 (2025-10-15)
+
+**Other changes:**
+
+- build(deps): bump actions/setup-node\@6 (● [903447e](https://github.com/softvisio-node/sqlite/commit/903447e); 👬 zdm)
+
+Compare with the previous release: [v1.28.16](https://github.com/softvisio-node/sqlite/compare/v1.28.16...v1.28.17)
+
 ### v1.28.16 (2025-09-23)
 
 **Other changes:**
