@@ -1,5 +1,13 @@
 # Changelog
 
+### v1.28.18 (2025-10-31)
+
+**Bug fixes:**
+
+- \[PATCH] fix: fix spawn shell args (● [8171980](https://github.com/softvisio-node/sqlite/commit/8171980); 👬 zdm)
+
+Compare with the previous release: [v1.28.17](https://github.com/softvisio-node/sqlite/compare/v1.28.17...v1.28.18)
+
 ### v1.28.17 (2025-10-15)
 
 **Other changes:**
