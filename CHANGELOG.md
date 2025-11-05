@@ -1,5 +1,13 @@
 # Changelog
 
+### v1.28.19 (2025-11-05)
+
+**Other changes:**
+
+- build(deps): bump sqlite v3.51.0 (● [b495f37](https://github.com/softvisio-node/sqlite/commit/b495f37); 👬 zdm)
+
+Compare with the previous release: [v1.28.18](https://github.com/softvisio-node/sqlite/compare/v1.28.18...v1.28.19)
+
 ### v1.28.18 (2025-10-31)
 
 **Bug fixes:**
