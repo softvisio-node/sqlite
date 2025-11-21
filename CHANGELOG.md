@@ -1,5 +1,15 @@
 # Changelog
 
+### v1.28.20 (2025-11-21)
+
+**Other changes:**
+
+- build(deps): bump actions/checkout\@v6 (● [d5d51eb](https://github.com/softvisio-node/sqlite/commit/d5d51eb); 👬 zdm)
+
+- build(deps): bump better-sqlite\@12.4.5 (● [62f7fc3](https://github.com/softvisio-node/sqlite/commit/62f7fc3); 👬 zdm)
+
+Compare with the previous release: [v1.28.19](https://github.com/softvisio-node/sqlite/compare/v1.28.19...v1.28.20)
+
 ### v1.28.19 (2025-11-05)
 
 **Other changes:**
