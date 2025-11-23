@@ -24,6 +24,6 @@
     },
     "dependencies": {
         "@softvisio/core": "^7.83.13",
-        "better-sqlite3": "12.4.5"
+        "better-sqlite3": "12.4.6"
     }
 }
