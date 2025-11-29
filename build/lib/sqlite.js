@@ -9,7 +9,7 @@ import Zip from "#core/zip";
 
 const USE_LATEST_SQLITE = true,
     SQLITE_DOMAIN = "www3.sqlite.org",
-    SQLITE_VERSION = "3.51.0",
+    SQLITE_VERSION = "3.51.1",
     SQLITE_YEAR = 2025,
     SQLITE_PRODUCT_VERSION =
         SQLITE_VERSION.split( "." )
